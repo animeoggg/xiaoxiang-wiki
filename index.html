@@ -1,0 +1,2715 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Xiaoxiang Sects and Beast Tides Wiki</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a jade-slip library: fixed index of scrolls on the left, one long reading column on the right */
+:root{
+  --bg:#eef2ee; --panel:#e3eae4; --ink:#1d2a26; --muted:#56655f; --line:#c3d0c7;
+  --jade:#1f6b55; --jade-soft:#d4e6dc; --gold:#9a6b12; --th:#24443a; --th-fg:#f1f6f2; --zebra:#e7eee9; --code:#2c5b4c;
+  --display:"Marcellus","Palatino Linotype",Georgia,serif;
+  --body:"Alegreya Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121a18; --panel:#18221f; --ink:#dfe9e3; --muted:#93a59c; --line:#2c3a35;
+  --jade:#5fc6a2; --jade-soft:#1e3a31; --gold:#d9ad55; --th:#1f3b32; --th-fg:#e7f3ec; --zebra:#172420; --code:#8fd6b9; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121a18; --panel:#18221f; --ink:#dfe9e3; --muted:#93a59c; --line:#2c3a35;
+  --jade:#5fc6a2; --jade-soft:#1e3a31; --gold:#d9ad55; --th:#1f3b32; --th-fg:#e7f3ec; --zebra:#172420; --code:#8fd6b9; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+a{color:var(--jade)}
+a:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{display:grid;grid-template-columns:290px minmax(0,1fr);min-height:100vh}
+aside{background:var(--panel);border-right:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);height:100vh;overflow-y:auto;
+  padding-block:22px 40px;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:18px}
+.brand{font-family:var(--display);font-size:1.35rem;line-height:1.2;margin:0 0 4px;text-wrap:balance}
+.brand small{display:block;font-family:var(--body);font-size:.8rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:6px}
+.search{margin:18px 0 10px;width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit;font-size:.95rem}
+.ng{margin-top:16px}
+.ngl{margin:0 0 4px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.ng ul{list-style:none;margin:0;padding:0}
+.ng a{display:block;padding:4px 10px;border-radius:5px;text-decoration:none;color:var(--ink);font-size:.95rem;border-left:2px solid transparent}
+.ng a:hover{background:var(--jade-soft)}
+.ng a.on{border-left-color:var(--jade);background:var(--jade-soft);color:var(--jade);font-weight:500}
+.empty{color:var(--muted);font-size:.9rem;margin-top:12px}
+main{padding-block:36px 80px;padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px));max-width:980px;min-width:0}
+header.hero{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:8px}
+header.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4.5vw,3rem);line-height:1.1;margin:0;text-wrap:balance}
+header.hero .meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+header.hero .meta li{font-family:var(--mono);font-size:.78rem;padding:3px 9px;border:1px solid var(--line);border-radius:20px;color:var(--muted)}
+.disc{margin:20px 0 0;padding:14px 18px;background:var(--jade-soft);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;font-size:.95rem}
+.disc p{margin:0}
+.part{margin:56px 0 0;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.ch{padding-top:8px;scroll-margin-top:12px}
+.ch h2{font-family:var(--display);font-weight:400;font-size:1.9rem;line-height:1.2;margin:10px 0 12px;text-wrap:balance;border-bottom:1px solid var(--line);padding-bottom:8px}
+.ch h3{font-size:1.15rem;margin:28px 0 6px;color:var(--jade);scroll-margin-top:12px}
+.ch p,.ch li{max-width:72ch}
+.ch ul,.ch ol{padding-left:1.3em}
+.ch li{margin:3px 0}
+code{font-family:var(--mono);font-size:.85em;color:var(--code);overflow-wrap:anywhere}
+.tw{overflow-x:auto;margin:12px 0 18px;border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-size:.93rem;font-variant-numeric:tabular-nums}
+th{background:var(--th);color:var(--th-fg);text-align:left;font-weight:500;padding:8px 12px;white-space:nowrap}
+td{padding:7px 12px;border-top:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even) td{background:var(--zebra)}
+.top{display:inline-block;margin-top:14px;font-size:.85rem;color:var(--muted)}
+.menu{display:none}
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr}
+  aside{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);padding-right:max(16px,env(safe-area-inset-right,0px));padding-left:max(16px,env(safe-area-inset-left,0px))}
+  .menu{display:inline-block;margin-top:10px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit;font-size:.9rem;cursor:pointer}
+  aside.closed .navlist{display:none}
+  main{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 60px}
+}
+</style>
+</head><body style="margin:0">
+<div class="wrap">
+<aside id="side" class="closed">
+  <p class="brand">Xiaoxiang Sects and Beast Tides<small>Addon wiki · v1.0.30</small></p>
+  <button class="menu" id="menu" type="button" aria-expanded="false">Show chapters</button>
+  <div class="navlist">
+    <input class="search" id="q" type="search" placeholder="Search the wiki…" aria-label="Search the wiki">
+    <nav id="nav"><div class="ng"><p class="ngl">Start here</p><ul><li><a href="#overview" data-t="overview">Overview</a></li><li><a href="#faq-and-known-limitations" data-t="faq-and-known-limitations">FAQ and Known Limitations</a></li><li><a href="#version-history" data-t="version-history">Version History</a></li><li><a href="#credits-and-disclaimer" data-t="credits-and-disclaimer">Credits and Disclaimer</a></li></ul></div><div class="ng"><p class="ngl">The world</p><ul><li><a href="#spirit-stone-caves-and-herb-grottos" data-t="spirit-stone-caves-and-herb-grottos">Spirit Stone Caves and Herb Grottos</a></li><li><a href="#demon-beasts" data-t="demon-beasts">Demon Beasts</a></li><li><a href="#beast-tide-almanac" data-t="beast-tide-almanac">Beast Tide Almanac</a></li><li><a href="#beast-tides" data-t="beast-tides">Beast Tides</a></li><li><a href="#companion-beasts-and-mounts" data-t="companion-beasts-and-mounts">Companion Beasts and Mounts</a></li><li><a href="#secret-realms" data-t="secret-realms">Secret Realms</a></li><li><a href="#spirit-veins" data-t="spirit-veins">Spirit Veins</a></li><li><a href="#ancient-battlefields" data-t="ancient-battlefields">Ancient Battlefields</a></li></ul></div><div class="ng"><p class="ngl">Sects</p><ul><li><a href="#sect-bounty-board" data-t="sect-bounty-board">Sect Bounty Board</a></li><li><a href="#generated-sects" data-t="generated-sects">Generated Sects</a></li><li><a href="#player-sects" data-t="player-sects">Player Sects</a></li><li><a href="#building-your-sect" data-t="building-your-sect">Building Your Sect</a></li><li><a href="#sect-life" data-t="sect-life">Sect Life</a></li><li><a href="#the-scripture-pagoda" data-t="the-scripture-pagoda">The Scripture Pagoda</a></li><li><a href="#relations-between-sects" data-t="relations-between-sects">Relations Between Sects</a></li><li><a href="#tournaments" data-t="tournaments">Tournaments</a></li></ul></div><div class="ng"><p class="ngl">War and danger</p><ul><li><a href="#war-sieges-and-vassals" data-t="war-sieges-and-vassals">War, Sieges and Vassals</a></li><li><a href="#notoriety-and-bounty-hunters" data-t="notoriety-and-bounty-hunters">Notoriety and Bounty Hunters</a></li><li><a href="#demonic-threats-and-the-spirit-caravan" data-t="demonic-threats-and-the-spirit-caravan">Demonic Threats and the Spirit Caravan</a></li></ul></div><div class="ng"><p class="ngl">Crafting and items</p><ul><li><a href="#minigames" data-t="minigames">Minigames</a></li><li><a href="#items-and-recipes" data-t="items-and-recipes">Items and Recipes</a></li></ul></div></nav>
+    <p class="empty" id="none" hidden>No chapter mentions that.</p>
+  </div>
+</aside>
+<main>
+  <header class="hero">
+    <h1>Xiaoxiang Sects and Beast Tides</h1>
+    <ul class="meta"><li>Minecraft 1.20.1</li><li>Forge 47.x</li><li>Needs Xiaoxiang Cultivation World</li><li>Needs Threateningly Mobs</li></ul>
+    <div class="disc"><p><strong>Disclaimer: I do not own anything.</strong> This is an unofficial, fan-made addon. All credit goes to the main mod, <strong>Xiaoxiang Cultivation World</strong>, and its author, and to <strong>Threateningly Mobs</strong> and its author. I claim no copyright and no credit for their work. If any author asks me to take this addon (or any part of it) down, I will remove it.</p>
+</div>
+  </header>
+  <p class="part" data-part>Start here</p>
+<section class="ch" id="overview"><h2>Overview</h2><p>Xiaoxiang: Sects &amp; Beast Tides is an unofficial addon for <strong>Xiaoxiang Cultivation World</strong> that turns its world into a dangerous cultivation frontier: graded spirit stone caves and herb grottos guarded by cultivating demon beasts, sects ranked lower, middle and higher with matching protection arrays, beast tides that besiege sects in three waves, generated sects that remember how you treat them and send war parties, tameable beasts you can ride, secret realms, spirit vein grottos, ancient battlefields, a bounty board, and a full player sect system with disciples, missions, buildings, a Scripture Pagoda, diplomacy, wars, sieges, vassals and tournaments. Crafting at the main mod’s cores is done by hand through minigames.</p>
+<p>The demon beasts come from <strong>Threateningly Mobs</strong>: every one of its creatures becomes a cultivator with a realm, spells and body techniques that fit its nature.</p>
+<h3 id="overview--requirements">Requirements</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Requirement</th>
+<th>Version</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Minecraft</td>
+<td>1.20.1</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Forge</td>
+<td>47.x</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Xiaoxiang Cultivation World</td>
+<td>0.1.1532 or newer</td>
+<td>The main mod, unmodified</td>
+</tr>
+<tr class="even">
+<td>Threateningly Mobs</td>
+<td>1.1 or newer</td>
+<td>Required; supplies the demon beasts</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="overview--installation">Installation</h3>
+<ol type="1">
+<li>Install Forge 1.20.1.</li>
+<li>Put the original Xiaoxiang Cultivation World jar, Threateningly Mobs, and the Xiaoxiang Sects jar in your <code>mods</code> folder.</li>
+<li>Start a <strong>new world</strong> for the full experience. Caves, ore removal and sect arrays apply to newly generated land; existing chunks keep what they already have.</li>
+</ol>
+<h3 id="overview--what-the-addon-changes-in-the-base-game">What the addon changes in the base game</h3>
+<ul>
+<li>Only creatures that cultivate spawn on their own. Vanilla monsters and animals no longer spawn naturally; spawners, eggs, breeding and commands still work.</li>
+<li>Spirit stone ore and spirit vein springs no longer generate in the open world. Spirit stone ore is found only inside the caves.</li>
+<li>Threateningly Mobs structures (palaces, nests, altars, dungeons) no longer generate. Its creatures remain.</li>
+<li>Spirit vein cores and formation core plates store and supply far more qi, so sect arrays can stay running.</li>
+</ul>
+<h3 id="overview--compatibility">Compatibility</h3>
+<p>The addon hooks the main mod with small, optional mixins. If a future main-mod update changes its sect code, an affected hook switches itself off quietly instead of crashing; caves, beasts and player sects keep working.</p>
+</section>
+<section class="ch" id="faq-and-known-limitations"><h2>FAQ and Known Limitations</h2><p><strong>Where do I find spirit stones now?</strong> Only in the caves (ore), cave chests, slain beasts, miners, missions, veins, vassals and trade. They no longer generate as ore in the open world.</p>
+<p><strong>I see no beasts.</strong> Check the Beast Tide Almanac: <em>Wild spawning</em> must be on. Try the Dangerous preset. Nothing spawns inside caves except their guardians.</p>
+<p><strong>Too many beasts?</strong> Choose the Calm preset, or lower <em>Spawn tries per wave</em> and <em>Up to N beasts near you</em>.</p>
+<p><strong>Why can’t I mine this ore or open this chest?</strong> A cave floor is sealed while any of its guardians lives; a secret realm’s blocks and chests are sealed until every boss in it is dead.</p>
+<p><strong>My alchemy core / refining core / formation plate does nothing.</strong> By design, every craft goes through a minigame. Choose the recipe and press the core’s button, then play.</p>
+<p><strong>My Talisman table does not seal.</strong> Finish the brush minigame with 40% or more. Spell scribing works as in the main mod.</p>
+<p><strong>Why are generated sect manuals so weak?</strong> Sect chests and ruins missions only hold foundation-level manuals. Higher ones come from secret realms and caves, or from stealing from a sect library.</p>
+<p><strong>Do I need a new world?</strong> Recommended. Caves, ore removal, sect arrays, grottos and realm layouts apply to newly generated land; the rest works in existing worlds.</p>
+<p><strong>Can I play the sect systems alone?</strong> Yes: alliances, wars, sieges, vassals, coalitions, champion duels and the caravan all work with the generated sects. Trades and contests need other players.</p>
+<p><strong>Something crashed.</strong> Send the <code>latest.log</code> (or crash report) so it can be fixed.</p>
+<h3 id="faq-and-known-limitations--known-limitations">Known limitations</h3>
+<ul>
+<li>Disciples in a bout must already be in the arena’s world, and the arena must be loaded.</li>
+<li>A bout, beast tide, siege, raid or minigame interrupted by a server restart ends quietly (a bout replays from the start; materials for an unfinished craft are returned).</li>
+<li>Spirit vein and core plate numbers apply to every core and plate, including player-built formations.</li>
+<li>If the main mod updates its sect, alchemy, refining or talisman code, the affected addon hooks switch off quietly. Report it so the addon can be updated.</li>
+<li>Bounty hunters, sieges and kidnappings need the player to be online.</li>
+</ul>
+</section>
+<section class="ch" id="version-history"><h2>Version History</h2><div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Version</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.0.10 - 1.0.15</td>
+<td>Caves, demon beasts, beast tides, almanac, generated sects, player sects, buildings, relations, tournaments, companion beasts, bounty board</td>
+</tr>
+<tr class="even">
+<td>1.0.16 - 1.0.20</td>
+<td>Secret realms, spirit veins, sect life (buildings, traits, dramas, rankings, champion duels), demonic threats, the Spirit Caravan</td>
+</tr>
+<tr class="odd">
+<td>1.0.21</td>
+<td>Scripture Pagoda and merit; generated chests capped at foundation-level manuals; stealing scriptures</td>
+</tr>
+<tr class="even">
+<td>1.0.22</td>
+<td>Six-storey pagoda; higher floors hold better manuals; guardians</td>
+</tr>
+<tr class="odd">
+<td>1.0.23</td>
+<td>Pagoda redesign; Elder guardians per floor; realm chests and blocks sealed until all bosses die; bigger fixed mazes; spirit vein grottos with graded pools and Spirit Spring Water</td>
+</tr>
+<tr class="even">
+<td>1.0.24</td>
+<td>Finances tab</td>
+</tr>
+<tr class="odd">
+<td>1.0.25</td>
+<td>Sieges and vassals; skill-check theft minigame</td>
+</tr>
+<tr class="even">
+<td>1.0.26</td>
+<td>Pill refining, forging, rune lock and breakthrough minigames</td>
+</tr>
+<tr class="odd">
+<td>1.0.27</td>
+<td>Minigame buttons in the core screens</td>
+</tr>
+<tr class="even">
+<td>1.0.28</td>
+<td>Choose your recipe; every craft needs its minigame; rank makes it easier and better</td>
+</tr>
+<tr class="odd">
+<td>1.0.29</td>
+<td>Vassal screen, siege engines, coalitions, prisoners and ransom, bounty hunters, elder succession, sparring, talisman sealing, herb harvesting, taming duel, ancient battlefields</td>
+</tr>
+<tr class="even">
+<td>1.0.30</td>
+<td>Fixed the Talisman and spell tables; creative button to raise an ancient battlefield</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section class="ch" id="credits-and-disclaimer"><h2>Credits and Disclaimer</h2><p><strong>I do not own anything.</strong> Xiaoxiang: Sects &amp; Beast Tides is an unofficial, fan-made addon. I claim no copyright and no credit for the mods it builds on.</p>
+<ul>
+<li><strong>Credit goes to the main mod, Xiaoxiang Cultivation World</strong>, and its author. Everything this addon adds is built on their work. The addon needs the original, unmodified mod and does not include or redistribute any of its files.</li>
+<li><strong>Threateningly Mobs</strong>: all credit to its author. Its creatures, models and textures are its own; this addon only changes how they spawn and fight, and does not include its files.</li>
+<li>This addon is not affiliated with or endorsed by either mod’s authors, Mojang or Microsoft. Minecraft is a trademark of Mojang Studios.</li>
+</ul>
+<p><strong>If anything has to be removed, I will remove it.</strong> If the author of either mod asks for this addon, or any part of it, to be taken down or changed, contact me and it will be done. Please download Xiaoxiang Cultivation World and Threateningly Mobs from their official pages to support their creators.</p>
+</section>
+<p class="part" data-part>The world</p>
+<section class="ch" id="spirit-stone-caves-and-herb-grottos"><h2>Spirit Stone Caves and Herb Grottos</h2><p>Caves are the only source of spirit stone ore. Each one is a great open gateway in a rock hill, a stair down to three maze floors, and a huge hall where the Cave Lord waits. Every floor is sealed until its guardians are dead.</p>
+<h3 id="spirit-stone-caves-and-herb-grottos--where-caves-appear">Where caves appear</h3>
+<ul>
+<li><strong>Wild caves</strong> are always <strong>Low-grade</strong>. The world is split into regions of 14 x 14 chunks; by default 40% of regions hold one cave (adjustable in the Beast Tide Almanac). About a third of wild caves are Herb Grottos.</li>
+<li><strong>Sect caves</strong>: every generated sect owns exactly one cave near its grounds, matched to its rank. Wild caves never appear inside or right beside a sect.</li>
+</ul>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Sect rank</th>
+<th>Cave grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lower</td>
+<td>Mid-grade</td>
+</tr>
+<tr class="even">
+<td>Middle</td>
+<td>High-grade</td>
+</tr>
+<tr class="odd">
+<td>Higher</td>
+<td>Supreme-grade</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="spirit-stone-caves-and-herb-grottos--elements">Elements</h3>
+<p>Every spirit stone cave has one element. Its guardians share that nature and its chests favour technique and spell manuals of that element. Herb Grottos are kept by earth and water beasts only.</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Cave</th>
+<th>Minions</th>
+<th>Elites</th>
+<th>Cave Lords (low to supreme)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Blazing (Fire)</td>
+<td>Fire Lizard, Flamelarva</td>
+<td>Flamehorn, Basalt Wyvern</td>
+<td>Basalt Wyvern, Scorch Golem, Solscarab Maximus, Inferno</td>
+</tr>
+<tr class="even">
+<td>Frozen (Ice)</td>
+<td>Frostbite, Ice Weaver, Snow Servant</td>
+<td>Ice Fairy Guardian, Frostbite</td>
+<td>Ice Fairy Guardian, Ferox Iceworm, Ice Broodmother</td>
+</tr>
+<tr class="odd">
+<td>Tidal (Water)</td>
+<td>Cannon Crab, Baby Horseshoe Crab, Diplocaulus</td>
+<td>Beast Horseshoe Crab</td>
+<td>Beast Horseshoe Crab, Hydra</td>
+</tr>
+<tr class="even">
+<td>Stoneheart (Earth)</td>
+<td>Sandworm, Dungeon Guardian, Mtr-1</td>
+<td>Armor of the Desert, Earthdrill, Castylosaurus, Tall Mouse</td>
+<td>Steelboar, Earthloong, Ferox Deathworm, Terradragon, Titan Rabbit, Guardian Statue</td>
+</tr>
+<tr class="odd">
+<td>Verdant (Wood)</td>
+<td>Mega Aphid, Forest Drake, Dracoscorpius</td>
+<td>Lindworm, Nature Spirit, Plague Bird</td>
+<td>Lindworm, Regalhart, Plague Bird</td>
+</tr>
+<tr class="even">
+<td>Abyssal (Dark)</td>
+<td>Shadow Spider, Nibbler, Devourer, Undead Paladin</td>
+<td>Cave Hunter, Skeleton Predator, Elite Zombie Warrior</td>
+<td>Skeleton Predator, Cave Hunter, Executioner, Lich, Moon Priest, Corrupted Heroic Soul, Hypocritical Saint</td>
+</tr>
+<tr class="odd">
+<td>Spirit Herb Grotto</td>
+<td>Earth and water minions</td>
+<td>Earth and water elites</td>
+<td>Beast Horseshoe Crab, Steelboar, Hydra, Earthloong, Ferox Deathworm, Terradragon, Titan Rabbit, Guardian Statue</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="spirit-stone-caves-and-herb-grottos--layout">Layout</h3>
+<ol type="1">
+<li><strong>The gateway</strong>: an 11-wide, 11-tall open door framed by stone pillars and a lintel, cut into a solid rock face, with a paved forecourt.</li>
+<li><strong>The slope</strong>: a broad stair tunnel down to the first floor.</li>
+<li><strong>Three maze floors</strong>: a 6 x 6 grid of rooms joined by corridors. Each floor has many branches and dead ends but exactly one route to the stair down.</li>
+<li><strong>Stairwells</strong>: a 3-wide spiral stair around a lit pillar joins every floor to the next.</li>
+<li><strong>The Cave Lord’s hall</strong>: a domed cavern about 53 blocks across and 30 high, ringed by eight great columns, reached by the stair winding down through the open hall.</li>
+</ol>
+<p>Herb Grottos look different: round earthen chambers with domed ceilings, moss and mud-brick paths, hanging roots and glow berries, spirit fields thick with pill herbs, and a great tree trunk carrying the stair.</p>
+<h3 id="spirit-stone-caves-and-herb-grottos--guardians">Guardians</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Where</th>
+<th>Count</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Each floor’s dead ends and branches</td>
+<td>4 (3 on the third floor)</td>
+<td>Minions that hold their room</td>
+</tr>
+<tr class="even">
+<td>Each floor’s passages</td>
+<td>4, 5 and 6 on floors 1 to 3</td>
+<td>Patrols that roam from room to room</td>
+</tr>
+<tr class="odd">
+<td>Beside the stair down (floors 2 and 3)</td>
+<td>1</td>
+<td>An elite</td>
+</tr>
+<tr class="even">
+<td>The Cave Lord’s hall</td>
+<td>1 Cave Lord, 2 elites, 4 patrols</td>
+<td>The boss and its guard</td>
+</tr>
+</tbody>
+</table></div>
+<p>Guardian cultivation by cave grade:</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Cave grade</th>
+<th>Floor 1 minions</th>
+<th>Floor 2-3 minions</th>
+<th>Floor elites and hall patrols</th>
+<th>Hall elites</th>
+<th>Cave Lord</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low</td>
+<td>Qi Refining</td>
+<td>Qi Refining</td>
+<td>Foundation Building</td>
+<td>Foundation Building</td>
+<td>Golden Core</td>
+</tr>
+<tr class="even">
+<td>Mid</td>
+<td>Qi Refining</td>
+<td>Foundation Building</td>
+<td>Foundation Building</td>
+<td>Golden Core</td>
+<td>Nascent Soul</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>Foundation Building</td>
+<td>Golden Core</td>
+<td>Golden Core</td>
+<td>Nascent Soul</td>
+<td>Soul Formation</td>
+</tr>
+<tr class="even">
+<td>Supreme</td>
+<td>Golden Core</td>
+<td>Nascent Soul</td>
+<td>Nascent Soul</td>
+<td>Soul Formation</td>
+<td>Body Integration</td>
+</tr>
+</tbody>
+</table></div>
+<p>The Cave Lord fights with boss rank, elites with rare rank, and minions and patrols at most uncommon rank (see Demon Beasts).</p>
+<h3 id="spirit-stone-caves-and-herb-grottos--seals">Seals</h3>
+<ul>
+<li>A floor stays <strong>sealed</strong> while any of its guardians lives. Sealed ore cannot be mined, sealed chests cannot be opened or broken, and grotto herbs cannot be picked.</li>
+<li>Trying a sealed chest makes every living guardian of that floor <strong>glow for 2 minutes</strong> so you can hunt them down.</li>
+<li>The gateway, slope and surface are never sealed.</li>
+<li>Spells, fireballs and explosions hurt whoever they hit but <strong>never break cave rock</strong>, and beasts cannot dig through it.</li>
+<li><strong>Nothing else spawns inside a cave</strong>: no wild beasts, no vanilla mobs, no wandering cultivators. Only the cave’s own guardians, and whatever they summon mid-fight.</li>
+</ul>
+<h3 id="spirit-stone-caves-and-herb-grottos--spirit-stone-ore">Spirit stone ore</h3>
+<p>Ore is 1.8% of the rock on floor 1, 2.2% on floor 2, 2.6% on floor 3 and 3.4% in the Cave Lord’s hall. Herb Grottos hold none. The grade of each vein depends on the cave’s grade and depth; low-grade caves almost never hold anything above low-grade stone.</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Cave grade</th>
+<th>Where</th>
+<th>Low</th>
+<th>Mid</th>
+<th>High</th>
+<th>Supreme</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low</td>
+<td>Floor 1</td>
+<td>100%</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>Low</td>
+<td>Hall</td>
+<td>96%</td>
+<td>4%</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Mid</td>
+<td>Floor 1</td>
+<td>90%</td>
+<td>10%</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>Mid</td>
+<td>Hall</td>
+<td>65%</td>
+<td>33%</td>
+<td>2%</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>Floor 1</td>
+<td>60%</td>
+<td>37%</td>
+<td>3%</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>High</td>
+<td>Hall</td>
+<td>28%</td>
+<td>58%</td>
+<td>13%</td>
+<td>1%</td>
+</tr>
+<tr class="odd">
+<td>Supreme</td>
+<td>Floor 1</td>
+<td>35%</td>
+<td>52%</td>
+<td>12%</td>
+<td>1%</td>
+</tr>
+<tr class="even">
+<td>Supreme</td>
+<td>Hall</td>
+<td>10%</td>
+<td>52%</td>
+<td>32%</td>
+<td>6%</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="spirit-stone-caves-and-herb-grottos--treasure">Treasure</h3>
+<ul>
+<li><strong>Chests</strong>: 1 on floor 1 and 2 on each lower floor, in dead ends; 2 treasure chests in the Cave Lord’s hall.</li>
+<li><strong>Spirit stone caves</strong>: spirit stones (the bulk of the loot, higher grades deeper down), technique and spell manuals of the cave’s element, and pills. The hall’s chests always hold a technique and a spell, sometimes a treasure, and may hold stones a grade above the cave.</li>
+<li><strong>Herb Grottos</strong>: no spirit stones. Pill herbs and their seeds, more pills, and the same element-free manuals. Herbs growing in the grotto regrow if they are destroyed while the floor is sealed.</li>
+</ul>
+<p>The Sect Survey Jade Slip lists caves you have found, with their grade.</p>
+</section>
+<section class="ch" id="demon-beasts"><h2>Demon Beasts</h2><p>Every Threateningly Mobs creature is a cultivating demon beast with a realm, a nature, spells, body techniques and a rank. Higher ranks are rarer, born at higher realms and fight much harder.</p>
+<h3 id="demon-beasts--ranks">Ranks</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Kinds</th>
+<th>Spawn weight</th>
+<th>Usual realm at birth</th>
+<th>Spell damage</th>
+<th>Health</th>
+<th>Extras</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Common</td>
+<td>18</td>
+<td>40</td>
+<td>Qi Refining (70%), Foundation Building (25%), Golden Core (5%)</td>
+<td>x1.0</td>
+<td>x1.0</td>
+<td>Packs of 1-3</td>
+</tr>
+<tr class="even">
+<td>Uncommon</td>
+<td>17</td>
+<td>16</td>
+<td>Mostly Foundation Building, up to Nascent Soul</td>
+<td>x1.15</td>
+<td>x1.1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Rare</td>
+<td>16</td>
+<td>6</td>
+<td>Golden Core to Nascent Soul, rarely Soul Formation or Void Refining</td>
+<td>x1.35</td>
+<td>x1.3</td>
+<td>Spells and techniques one realm beyond its own, +1 projectile per cast, 20% faster casting, a second body technique</td>
+</tr>
+<tr class="even">
+<td>Boss</td>
+<td>9</td>
+<td>2</td>
+<td>Nascent Soul to Soul Formation, up to Mahayana</td>
+<td>x1.6</td>
+<td>x1.7</td>
+<td>Spells and techniques two realms beyond its own, +1 projectile, 40% faster casting, a second body technique, Fury</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Fury</strong>: once per fight, when a boss falls below 40% health it roars, heals 10%, gains Strength II, Speed II and Resistance for 30 seconds, and casts faster still.</p>
+<p>Beasts born more than 3,000 blocks from world spawn have a small chance of being a realm stronger, and the Almanac’s Danger setting adds more.</p>
+<h3 id="demon-beasts--where-they-live">Where they live</h3>
+<p>Each beast appears only in lands that suit its nature. Kinds marked (night) appear only at night or underground.</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Nature</th>
+<th>Common</th>
+<th>Uncommon</th>
+<th>Rare</th>
+<th>Boss</th>
+<th>Lands</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fire</td>
+<td>Fire Lizard, Flamelarva</td>
+<td>Flamehorn</td>
+<td>Scorch Golem, Solscarab Maximus, Basalt Wyvern, Flower of Dragon</td>
+<td>Inferno</td>
+<td>Savanna, desert, badlands, Nether, basalt deltas, crimson forest</td>
+</tr>
+<tr class="even">
+<td>Ice</td>
+<td>Frostbite, Ice Weaver, Snow Servant</td>
+<td>Ice Fairy</td>
+<td>Ice Fairy Guardian, Ferox Iceworm</td>
+<td>Ice Broodmother</td>
+<td>Snowy and frozen lands</td>
+</tr>
+<tr class="odd">
+<td>Water</td>
+<td>Red Triplefish, Hippofish, Diplocaulus, Cannon Crab, Baby Horseshoe Crab</td>
+<td>Giant Sea Cucumber, Hydra Cub, Tide Specter (night), Riptooth</td>
+<td>Beast Horseshoe Crab, Hydra</td>
+<td>Abyss Fang</td>
+<td>Ocean, deep ocean, rivers, beaches, swamps</td>
+</tr>
+<tr class="even">
+<td>Earth</td>
+<td>Sandworm, Tall Mouse</td>
+<td>Castylosaurus</td>
+<td>Armor of the Desert, Ferox Deathworm, Earthloong</td>
+<td>Terradragon, Titan Rabbit</td>
+<td>Desert, badlands, plains, savanna, mountains, forest</td>
+</tr>
+<tr class="odd">
+<td>Metal</td>
+<td></td>
+<td>Earthdrill, Steelboar</td>
+<td></td>
+<td></td>
+<td>Caves, mountains, savanna, badlands</td>
+</tr>
+<tr class="even">
+<td>Wood and Wind</td>
+<td>Forest Drake, Copas, Louxia</td>
+<td>Nature Fairy, Nature Spirit</td>
+<td>Regalhart</td>
+<td></td>
+<td>Forest, jungle, plains, mountains, lush caves</td>
+</tr>
+<tr class="odd">
+<td>Poison</td>
+<td>Mega Aphid</td>
+<td>Dracoscorpius, Plague Bird</td>
+<td>Lindworm</td>
+<td></td>
+<td>Forest, jungle, desert, swamp, badlands</td>
+</tr>
+<tr class="even">
+<td>Shadow</td>
+<td>Shadow Spider (night), Nibbler</td>
+<td>Shadowmoon Butterfly (night), Cave Hunter, Devourer</td>
+<td></td>
+<td>Lich (night)</td>
+<td>Dark forest, forest, caves, deep dark, swamp</td>
+</tr>
+<tr class="odd">
+<td>Blood</td>
+<td></td>
+<td>Elite Zombie Warrior (night)</td>
+<td>Skeleton Predator (night), Undead Paladin (night)</td>
+<td>Executioner (night), Corrupted Heroic Soul (night)</td>
+<td>Plains, taiga, dark forest, badlands, desert, mountains</td>
+</tr>
+<tr class="even">
+<td>Holy</td>
+<td></td>
+<td></td>
+<td>Moon Priest (night)</td>
+<td>Hypocritical Saint</td>
+<td>Snowy lands, mountains, plains</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nibbler, Devourer and Skeleton Predator also live in the Threateningly Mobs biomes.</p>
+<h3 id="demon-beasts--how-wild-beasts-spawn">How wild beasts spawn</h3>
+<p>The addon spawns beasts itself, around each player, so it does not depend on darkness or the vanilla monster cap. By default:</p>
+<ul>
+<li>every 6 seconds, 2 nearby spots are tried; each can bring a whole pack;</li>
+<li>at night and underground the rate is 140%, in daylight on the surface 80%;</li>
+<li>beasts appear 24 to 56 blocks away, and stop once 14 wild beasts are within 64 blocks of you;</li>
+<li>a rare beast never appears within 40 blocks of another rare one, and a boss never within 128 blocks of another boss;</li>
+<li>wild beasts with no player within 128 blocks fade away (named ones stay).</li>
+</ul>
+<p>All of these can be changed with the Beast Tide Almanac.</p>
+<h3 id="demon-beasts--spells">Spells</h3>
+<p>Beasts learn the spells of their nature as their realm rises. Rare beasts and bosses know the spells of one or two realms higher.</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Nature</th>
+<th>Qi Refining</th>
+<th>Foundation Building</th>
+<th>Golden Core</th>
+<th>Nascent Soul</th>
+<th>Higher</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fire</td>
+<td>Fireball</td>
+<td>Sun Flare</td>
+<td>Flame Dash, Demon Blood Surge</td>
+<td>Blood Flame Raiment</td>
+<td>Great Fireball (Void Refining), Star Fall (Mahayana)</td>
+</tr>
+<tr class="even">
+<td>Ice</td>
+<td>Ice Lance</td>
+<td>Mystic Shell Guard</td>
+<td>Glacial Wall</td>
+<td>Frost Mirror Armor</td>
+<td>Heaven Piercing Cone (Soul Formation)</td>
+</tr>
+<tr class="odd">
+<td>Water</td>
+<td>Surging Wave</td>
+<td>Mystic Shell Guard</td>
+<td>Water Prison</td>
+<td>Tidal Shockwave</td>
+<td>Mirror Water Clone (Soul Formation)</td>
+</tr>
+<tr class="even">
+<td>Lightning</td>
+<td>Lightning Arc</td>
+<td>Lightning Bolt</td>
+<td>Thunder Blink</td>
+<td>Rune Thunder Trap</td>
+<td>Palm Thunder (Soul Formation)</td>
+</tr>
+<tr class="odd">
+<td>Earth</td>
+<td>Stone Bullet</td>
+<td>Mystic Shell Guard</td>
+<td>Tidal Shockwave</td>
+<td>Heaven Piercing Cone</td>
+<td>Star Fall (Mahayana)</td>
+</tr>
+<tr class="even">
+<td>Wood</td>
+<td>Verdant Bind</td>
+<td>Wind Blade</td>
+<td>Poison Mist</td>
+<td>Mystic Shell Guard</td>
+<td>Demon Blood Surge (Soul Formation)</td>
+</tr>
+<tr class="odd">
+<td>Poison</td>
+<td>Poison Mist</td>
+<td>Verdant Bind</td>
+<td>Blood Spike</td>
+<td>Wither Touch</td>
+<td>Demon Blood Surge (Soul Formation)</td>
+</tr>
+<tr class="even">
+<td>Wind</td>
+<td>Wind Blade</td>
+<td>Thunder Blink</td>
+<td>Flying Sword</td>
+<td>Tidal Shockwave</td>
+<td>Sky Splitting Sword Aura (Void Refining)</td>
+</tr>
+<tr class="odd">
+<td>Metal</td>
+<td>Flying Sword</td>
+<td>Mystic Shell Guard</td>
+<td>Sword Convergence</td>
+<td>Demon Blood Surge</td>
+<td>Sky Splitting Sword Aura (Soul Formation)</td>
+</tr>
+<tr class="even">
+<td>Blood</td>
+<td>Blood Spike</td>
+<td>Demon Blood Surge</td>
+<td>Blood Shadow Dash</td>
+<td>Wither Touch</td>
+<td>Blood Demon Blade Art (Soul Formation)</td>
+</tr>
+<tr class="odd">
+<td>Shadow</td>
+<td>Poison Mist</td>
+<td>Blood Shadow Dash</td>
+<td>Wither Touch</td>
+<td>Blood Spike</td>
+<td>Blood Demon Blade Art (Void Refining)</td>
+</tr>
+<tr class="even">
+<td>Holy</td>
+<td>Sun Flare</td>
+<td>Flying Sword</td>
+<td>Mystic Shell Guard</td>
+<td>Sword Convergence</td>
+<td>Sky Splitting Sword Aura (Soul Formation), Star Fall (Mahayana)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Stronger beasts loose more projectiles per cast (up to 4, plus 1 for rare and boss) and recover faster between spells.</p>
+<h3 id="demon-beasts--techniques-growth-and-aura">Techniques, growth and aura</h3>
+<ul>
+<li>Each beast tempers its body with one technique per tier its realm can hold, preferring its own element. Techniques add health, attack, armour, speed and knockback resistance, and can strengthen spells of their element.</li>
+<li>Beasts gather qi from the land (more in qi-rich biomes) and break through to higher realms over time, healing fully when they do.</li>
+<li>A coloured aura shows each beast’s realm, and its name tag shows realm and nature.</li>
+<li>Beasts carry the main mod’s beast cultivation, so demon cores, demon bones and sect hunting tasks work with them.</li>
+</ul>
+<h3 id="demon-beasts--drops">Drops</h3>
+<p>Slain beasts drop spirit stones by realm (low-grade from weak beasts, up to supreme-grade from the strongest), with a chance of a spirit vein core from Foundation Building upward (60% at the highest realms). Looting raises both. Cave guardians always drop their core; Herb Grotto keepers drop herbs instead of stones.</p>
+</section>
+<section class="ch" id="beast-tide-almanac"><h2>Beast Tide Almanac</h2><p>The Beast Tide Almanac sets how often and how strong the demon beasts come. Anyone holding one can read it; only the world’s owner (single player) or an operator can change it. It cannot be crafted: take it from the creative menu or use <code>/give @s xiaoxiang_sects:beast_almanac</code>.</p>
+<p>Right-click to open it. Move the sliders (hover one to see what it does), then press <strong>Apply</strong>. <strong>Revert</strong> drops unsaved changes. Settings are saved with the world.</p>
+<h3 id="beast-tide-almanac--how-often">How often</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Default</th>
+<th>Range</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A wave every</td>
+<td>6 s</td>
+<td>2-60 s</td>
+<td>Time between spawn waves around each player</td>
+</tr>
+<tr class="even">
+<td>Spawn tries per wave</td>
+<td>2</td>
+<td>1-8</td>
+<td>Spots tried per wave; each can bring a whole pack</td>
+</tr>
+<tr class="odd">
+<td>Up to N beasts near you</td>
+<td>14</td>
+<td>2-40</td>
+<td>No new beasts while this many wild beasts are within 64 blocks</td>
+</tr>
+<tr class="even">
+<td>Daytime activity</td>
+<td>80%</td>
+<td>0-300%</td>
+<td>Scales the tries in daylight on the surface</td>
+</tr>
+<tr class="odd">
+<td>Night / cave activity</td>
+<td>140%</td>
+<td>0-300%</td>
+<td>Scales the tries at night and underground</td>
+</tr>
+<tr class="even">
+<td>Closest spawn</td>
+<td>24 blocks</td>
+<td>16-48</td>
+<td>Beasts never appear closer to any player</td>
+</tr>
+<tr class="odd">
+<td>Farthest spawn</td>
+<td>56 blocks</td>
+<td>32-96</td>
+<td>The farthest a wave reaches</td>
+</tr>
+<tr class="even">
+<td>Leave beyond</td>
+<td>128 blocks</td>
+<td>64-256</td>
+<td>Wild beasts with no player this close fade away</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="beast-tide-almanac--how-strong">How strong</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Setting</th>
+<th>Default</th>
+<th>Range</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Common beasts</td>
+<td>100%</td>
+<td>0-500%</td>
+<td>Weight of common kinds</td>
+</tr>
+<tr class="even">
+<td>Uncommon beasts</td>
+<td>100%</td>
+<td>0-500%</td>
+<td>Weight of uncommon kinds</td>
+</tr>
+<tr class="odd">
+<td>Rare beasts</td>
+<td>100%</td>
+<td>0-500%</td>
+<td>Weight of rare kinds</td>
+</tr>
+<tr class="even">
+<td>Bosses</td>
+<td>100%</td>
+<td>0-500%</td>
+<td>Weight of boss kinds</td>
+</tr>
+<tr class="odd">
+<td>Danger</td>
+<td>normal</td>
+<td>0-4</td>
+<td>Each step gives every new beast a further 50% chance of one realm higher</td>
+</tr>
+<tr class="even">
+<td>Rare beasts apart</td>
+<td>40 blocks</td>
+<td>16-256</td>
+<td>A rare beast never appears this close to another</td>
+</tr>
+<tr class="odd">
+<td>Bosses apart</td>
+<td>128 blocks</td>
+<td>32-512</td>
+<td>A boss never appears this close to another</td>
+</tr>
+<tr class="even">
+<td>Wild caves</td>
+<td>40% of regions</td>
+<td>0-100%</td>
+<td>Share of world regions holding a wild cave (new land only)</td>
+</tr>
+<tr class="odd">
+<td>Beast tide chance</td>
+<td>20% a dusk</td>
+<td>0-100%</td>
+<td>Chance a beast tide strikes your sect each dusk (generated sects get half)</td>
+</tr>
+<tr class="even">
+<td>Beast tide size</td>
+<td>100%</td>
+<td>25-300%</td>
+<td>Scales how many beasts each tide wave brings</td>
+</tr>
+</tbody>
+</table></div>
+<p>The Almanac’s bottom row also has buttons for operators and the world owner: <strong>Attack my sect</strong> and <strong>Nearest sect</strong> call a beast tide now, <strong>Stop</strong> calls off tides within 256 blocks, and <strong>Open realm</strong> tears a secret realm rift open beside you. Two status lines show the nearest tide and the open realms.</p>
+<h3 id="beast-tide-almanac--switches">Switches</h3>
+<ul>
+<li><strong>Wild spawning</strong>: turns the beast spawner on or off. Caves keep their guardians either way.</li>
+<li><strong>Cave spawns</strong>: whether beasts appear around players who are underground.</li>
+<li><strong>Sea beasts</strong>: whether water beasts appear in oceans, rivers and swamps.</li>
+<li><strong>Tides</strong>: whether beast tides strike sects. Turning Wild spawning off stops tides too.</li>
+</ul>
+<h3 id="beast-tide-almanac--presets">Presets</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Preset</th>
+<th>Wave</th>
+<th>Tries</th>
+<th>Near-you cap</th>
+<th>Day / night</th>
+<th>Uncommon / rare / boss</th>
+<th>Danger</th>
+<th>Wild caves</th>
+<th>Tide chance / size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Calm</td>
+<td>14 s</td>
+<td>1</td>
+<td>8</td>
+<td>40% / 90%</td>
+<td>70% / 50% / 30%</td>
+<td>0</td>
+<td>30%</td>
+<td>10% / 75%</td>
+</tr>
+<tr class="even">
+<td>Normal</td>
+<td>6 s</td>
+<td>2</td>
+<td>14</td>
+<td>80% / 140%</td>
+<td>100% / 100% / 100%</td>
+<td>0</td>
+<td>40%</td>
+<td>20% / 100%</td>
+</tr>
+<tr class="odd">
+<td>Dangerous</td>
+<td>4 s</td>
+<td>3</td>
+<td>22</td>
+<td>120% / 200%</td>
+<td>140% / 160% / 160%</td>
+<td>1</td>
+<td>55%</td>
+<td>35% / 150%</td>
+</tr>
+<tr class="even">
+<td>Nightmare</td>
+<td>2 s</td>
+<td>5</td>
+<td>34</td>
+<td>200% / 300%</td>
+<td>200% / 250% / 300%</td>
+<td>3</td>
+<td>75%</td>
+<td>60% / 225%</td>
+</tr>
+</tbody>
+</table></div>
+<p>A preset only fills in the sliders; press Apply to use it.</p>
+<h3 id="beast-tide-almanac--the-live-panel">The live panel</h3>
+<p>The right side of the Almanac reads the place where you stand:</p>
+<ul>
+<li>your biome and the lands it counts as (forest, snowy, cave and so on);</li>
+<li>wild beasts within 64 blocks, counted by rank, against the cap;</li>
+<li>the time until the next wave;</li>
+<li>every species that can appear on that spot right now, with its share of spawns, coloured by rank (hover for its nature and whether it comes only at night), and the sea beasts if there is water;</li>
+<li>an estimate of spawn tries per minute by day and by night at the slider values on screen.</li>
+</ul>
+</section>
+<section class="ch" id="beast-tides"><h2>Beast Tides</h2><p>Now and then, at dusk, a horde of demon beasts gathers against a sect and attacks it in three waves.</p>
+<h3 id="beast-tides--which-sects-are-struck">Which sects are struck</h3>
+<ul>
+<li><strong>Your sect</strong>: each dusk there is a chance (the Almanac’s <em>Beast tide chance</em>, 20% by default) if you, the master, are online in the sect’s world and the sect last had a tide at least 2 days ago.</li>
+<li><strong>Generated sects</strong>: a sect within about 128 blocks of a player can be struck too, at half that chance. Defend it and it will remember.</li>
+<li>At most 3 tides run at once, and never two within 200 blocks of each other.</li>
+</ul>
+<h3 id="beast-tides--how-a-tide-unfolds">How a tide unfolds</h3>
+<ol type="1">
+<li><strong>Warning</strong>: a raid horn sounds and players within 160 blocks (and your sect’s master) are told. The tide strikes 30 seconds later.</li>
+<li><strong>Wave 1</strong>: common beasts.</li>
+<li><strong>Wave 2</strong>: a heavier mix of common and uncommon beasts.</li>
+<li><strong>Final wave</strong>: rare beasts, led by a named <strong>Tide Lord</strong> boss on stronger sects.</li>
+</ol>
+<p>Each wave comes from one direction, which the message names, and appears 36-48 blocks from the sect’s heart. The beasts march on the centre and attack any player or cultivator within about 20 blocks. The next wave comes once three quarters of the current one is dead, or after 2.5 minutes. A red bar at the top of the screen shows the wave and how many beasts are left to everyone within 96 blocks.</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Tide against</th>
+<th>Strength</th>
+<th>Beast realm</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Your sect</td>
+<td>Your realm, plus 1 for every 4 disciples</td>
+<td>From one realm below yours (wave 1) to one above (final wave)</td>
+</tr>
+<tr class="even">
+<td>Lower sect</td>
+<td>Light</td>
+<td>Foundation Building and up</td>
+</tr>
+<tr class="odd">
+<td>Middle sect</td>
+<td>Medium</td>
+<td>Nascent Soul and up</td>
+</tr>
+<tr class="even">
+<td>Higher sect</td>
+<td>Heavy</td>
+<td>Void Refining and up</td>
+</tr>
+</tbody>
+</table></div>
+<p>Wave sizes grow with strength and with the Almanac’s <em>Beast tide size</em>. Rare beasts and the Tide Lord get their rank’s extra power and spells.</p>
+<h3 id="beast-tides--winning-and-losing">Winning and losing</h3>
+<ul>
+<li><strong>You win</strong> when the final wave is wiped out.</li>
+<li><strong>You lose</strong> if no player stays within 96 blocks for 2 minutes, or if the tide is not broken within 12 minutes. What is left of the horde turns into ordinary wild beasts.</li>
+</ul>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Outcome</th>
+<th>Your sect</th>
+<th>A generated sect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Victory</td>
+<td>Spirit stones to the treasury (ten days of your realm’s standard wage + 50), prestige +1, loyalty +5 for disciples who fought</td>
+<td>Every player who helped receives spirit stones (30, 120 or 400 by sect rank, more for each beast slain); your own sect’s attitude with them rises by 15</td>
+</tr>
+<tr class="even">
+<td>Defeat</td>
+<td>10% of the treasury lost, plus up to 6 storehouse stacks</td>
+<td>Nothing</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section class="ch" id="companion-beasts-and-mounts"><h2>Companion Beasts and Mounts</h2><p>Beat a demon beast down and bind it with a <strong>Beast Subduing Talisman</strong>, and it becomes your companion: it fights for you, can be ridden, grows stronger, can be bred and equipped, and lends you its spells.</p>
+<h3 id="companion-beasts-and-mounts--taming-the-battle-of-wills">Taming: the battle of wills</h3>
+<ul>
+<li><strong>Recipe</strong> (shapeless): Talisman Paper + Demon Core (tier 1) + Demon Bone + Lead → 2 talismans.</li>
+<li>Beat the beast below <strong>30% health</strong> (50% if its realm is below yours), then use the talisman on it. The talisman is used up.</li>
+<li>The beast freezes and a <strong>battle of wills</strong> begins: a tug-of-war bar. Tap SPACE quickly to push your will toward your end; the beast pulls back, and every few seconds it <strong>surges</strong> three times as hard. Reach your end within 14 seconds and it submits; if it reaches its end, or time runs out, it resists in fury.</li>
+<li>How hard the battle is comes from the old taming chance: 50%, +15% per realm you stand above it (−15% per realm below), more the closer it is to death, scaled by rarity (uncommon ×0.8, rare ×0.55, boss ×0.3). A high chance means a weak pull; a low chance means a fierce one.</li>
+<li>A beast more than 2 realms above you cannot be tamed. Cave guardians and beasts in a running beast tide cannot be tamed.</li>
+<li><strong>How many</strong>: 1 at Mortal, one more every two realms, up to 6.</li>
+</ul>
+<h3 id="companion-beasts-and-mounts--your-companions">Your companions</h3>
+<ul>
+<li>Named <em>YourName’s (species)</em> in green, with their realm and evolution title. They keep cultivating.</li>
+<li>They follow you, attack whatever hurts you or whatever you strike, and never harm you, your sect, your allies or your other beasts.</li>
+<li>Left more than 28 blocks behind, they leap to your side. They never despawn.</li>
+</ul>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Action</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Right-click (empty hand)</td>
+<td>Ride it, if it is big enough. WASD steers, sprint to go faster, space to jump; flying beasts climb or dive where you look. Sneak to get off</td>
+</tr>
+<tr class="even">
+<td>Sneak + right-click</td>
+<td>Stay here / follow me</td>
+</tr>
+<tr class="odd">
+<td>Right-click with meat / a demon core</td>
+<td>Heals 20% / 50%</td>
+</tr>
+<tr class="even">
+<td><strong>R</strong> key, or the talisman used in the air</td>
+<td>Your nearest companion casts one of its spells at what you look at</td>
+</tr>
+<tr class="odd">
+<td><strong>J</strong> key, or sneak + talisman</td>
+<td>Opens the <strong>Companion screen</strong></td>
+</tr>
+<tr class="even">
+<td>Sneak + talisman on your beast</td>
+<td>Releases it back into the wild</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="companion-beasts-and-mounts--the-companion-screen">The Companion screen</h3>
+<p>Lists every companion with realm, health, state (following, staying, stored), where it is, its traits and its spells. For each one:</p>
+<ul>
+<li><strong>Locate</strong>: it glows through walls for a while so you can find it.</li>
+<li><strong>Store / Summon</strong>: keep it in your spirit pouch (it leaves the world safely) and call it back beside you later.</li>
+<li><strong>Stay</strong>: toggle stay / follow.</li>
+<li><strong>Gear off</strong>: take back its armour and charm.</li>
+<li><strong>Unbind</strong>: free it for good.</li>
+</ul>
+<h3 id="companion-beasts-and-mounts--evolution">Evolution</h3>
+<p>Feed a companion a demon core to evolve it once it is strong enough. There are three stages above a plain beast: <strong>Awakened</strong>, <strong>Ascended</strong> and <strong>Sovereign</strong>. Each stage needs a demon core of a higher tier, raises its health and attack, and shows in its name.</p>
+<h3 id="companion-beasts-and-mounts--breeding">Breeding</h3>
+<p>Sneak and use a demon core (tier 2 or higher) on two of your companions within 30 seconds of each other to pair them. Their young inherit a bloodline (up to 5 generations deep) that makes them a little stronger.</p>
+<h3 id="companion-beasts-and-mounts--beast-gear">Beast gear</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Iron / Gold / Jade Beast Armour</td>
+<td>More armour, better with each metal</td>
+</tr>
+<tr class="even">
+<td>Flame Charm</td>
+<td>Its blows set targets on fire</td>
+</tr>
+<tr class="odd">
+<td>Wind Charm</td>
+<td>Moves faster</td>
+</tr>
+<tr class="even">
+<td>Jade Charm</td>
+<td>Slowly regenerates health</td>
+</tr>
+</tbody>
+</table></div>
+<p>Right-click your companion with a piece of gear to equip it; <strong>Gear off</strong> on the Companion screen takes it back.</p>
+</section>
+<section class="ch" id="secret-realms"><h2>Secret Realms</h2><p>Now and then a <strong>gate</strong> tears open in the world and stays open for <strong>3 days</strong>: a tall glowing oval ringed with crackling light, coloured by its rank. Step through it to reach a realm of floating islands. Clear it before it closes, or it <strong>breaks</strong>: a beast tide pours out onto the land around it.</p>
+<h3 id="secret-realms--gates-and-ranks">Gates and ranks</h3>
+<ul>
+<li><strong>When</strong>: around midday each day there is a 30% chance a gate opens 60-140 blocks from a random player (at most 2 open at once). Everyone in that world is told where. Gate Keys and creative buttons can open one beside you.</li>
+<li><strong>Rank</strong>: rolled by distance from world spawn; farther out, higher ranks are likelier.</li>
+<li><strong>Modifiers</strong>: some realms roll a modifier: <strong>Blood Moon</strong> (every beast one realm higher), <strong>Fog</strong>, <strong>Frenzy</strong> (beasts faster and fiercer), or <strong>Bountiful</strong> (richer caches).</li>
+</ul>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Gate</th>
+<th>Minions</th>
+<th>Elites</th>
+<th>Island Wardens</th>
+<th>Realm Sovereign</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>D-Rank</td>
+<td>Foundation Building</td>
+<td>Golden Core</td>
+<td>Golden Core</td>
+<td>Nascent Soul</td>
+</tr>
+<tr class="even">
+<td>B-Rank</td>
+<td>Golden Core</td>
+<td>Nascent Soul</td>
+<td>Nascent Soul</td>
+<td>Soul Formation</td>
+</tr>
+<tr class="odd">
+<td>A-Rank</td>
+<td>Nascent Soul</td>
+<td>Soul Formation</td>
+<td>Soul Formation</td>
+<td>Void Refining</td>
+</tr>
+<tr class="even">
+<td>S-Rank</td>
+<td>Soul Formation</td>
+<td>Void Refining</td>
+<td>Void Refining</td>
+<td>Body Integration</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="secret-realms--the-islands">The islands</h3>
+<p>A great central island where the <strong>Realm Sovereign</strong> waits at its altar, ringed by six inner islands and 2-5 outer ones (more for higher ranks), joined by plank bridges with gaps to leap and rotten boards that crumble underfoot, plus a <strong>sky shrine</strong> high above, reached only by a parkour trail of floating stones. Each island has its own biome (verdant, frost, ember, dune, fungal, crystal, blossom or sculk) and purpose:</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Island</th>
+<th>What waits there</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pagoda, Library</td>
+<td>Buildings full of beasts and caches</td>
+</tr>
+<tr class="even">
+<td>Killing-array isle</td>
+<td>A deadly array; break its <strong>lodestone core</strong> to shatter it</td>
+</tr>
+<tr class="odd">
+<td>Trapped shrine</td>
+<td>Pressure plates hide arrows, fire, poison, lightning and ambushes</td>
+</tr>
+<tr class="even">
+<td>Beast nest</td>
+<td>A swarm of beasts</td>
+</tr>
+<tr class="odd">
+<td>The Great Maze</td>
+<td>A 36 × 36 walled maze (solid stone, never see-through) with a cache at its heart; its single gate always faces the bridge</td>
+</tr>
+<tr class="even">
+<td>Ore crag</td>
+<td>Spirit ore boulders</td>
+</tr>
+<tr class="odd">
+<td>Brazier vault</td>
+<td>Light all five braziers to open the sealed vault</td>
+</tr>
+<tr class="even">
+<td>High / Humble Sanctum</td>
+<td>Arrays admit only cultivators at least as strong as the elites, or no stronger than the minions</td>
+</tr>
+<tr class="odd">
+<td>Spirit garden</td>
+<td>Pill herbs</td>
+</tr>
+<tr class="even">
+<td>Sky shrine</td>
+<td>A lone elite on a crystal peak</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="secret-realms--the-rules-of-a-realm">The rules of a realm</h3>
+<ul>
+<li><strong>No flying</strong> until the realm is conquered.</li>
+<li><strong>Every boss must fall.</strong> Each island has an <strong>Island Warden</strong> boss; the Sovereign holds the centre. All chests stay sealed until the Sovereign <strong>and every Warden</strong> are dead. The seal tells you how many remain.</li>
+<li><strong>Nothing can be broken, built or blown up</strong> until then, except the killing-array cores and the Sovereign’s crying-obsidian eyes.</li>
+<li>Realm beasts never fight each other; they attack only players, their companions and sect disciples.</li>
+<li><strong>The Sovereign</strong> calls its guard at two thirds health and seals the arena and rages at one third. Four crying-obsidian <strong>eyes</strong> around its altar protect it while they stand.</li>
+<li>Some chests are <strong>bait</strong>: opening one springs an ambush.</li>
+</ul>
+<h3 id="secret-realms--loot">Loot</h3>
+<p>Caches come in four qualities: <strong>Common, Rare, Epic and Legendary</strong>, better on higher ranks and deeper in. They hold spirit stones, high-level technique and spell manuals (secret realms and caves are the only natural source of these), pills, treasures and sometimes <strong>Gate Keys</strong>.</p>
+<p><strong>Rune locks</strong>: even after the realm is conquered, <strong>Epic and Legendary</strong> caches are sealed by rune rings. Pick the lock (see Minigames) to open it for good; a Legendary lock may hide a Gate Key. Fail and the alarm calls guardians, and the rings reset.</p>
+<h3 id="secret-realms--conquest-and-leaving">Conquest and leaving</h3>
+<ul>
+<li>When every boss has fallen the realm is <strong>conquered</strong>: a <strong>golden gate</strong> opens at the altar, the score is recorded (time, deaths, rank), the best clear per rank is announced to the server, and the Sovereign may drop a Gate Key (60%).</li>
+<li>The pale gate you arrived by always leads out.</li>
+<li>A <strong>Gate Key</strong> (Rank D, B, A or S) opens a gate of its rank beside you when used.</li>
+</ul>
+</section>
+<section class="ch" id="spirit-veins"><h2>Spirit Veins</h2><p>Rich wellsprings of qi surface now and then in the wild (at most 6 at once). Each is a <strong>grotto</strong>: a shrine gate on the surface opens onto a long stair (up to about 26 blocks down) into a great <strong>amethyst cavern</strong> lined with calcite and spirit stone ore of the vein’s grade, hung with crystals and lit by glowstone and sea lanterns, around a <strong>spirit pool</strong>.</p>
+<h3 id="spirit-veins--claiming-and-income">Claiming and income</h3>
+<ul>
+<li>Keep a <strong>one-minute vigil</strong> beside the <strong>core</strong> on its pedestal across the pool to claim the vein for your sect (two minutes to seize one another sect holds).</li>
+<li>A held vein pays the treasury every dawn, shown on the <strong>Finances</strong> tab.</li>
+<li>Generated sects covet veins: at dawn there is a 20% chance one sends a war party to the grotto’s entrance. Be there within 2 minutes and break it, or the vein is lost.</li>
+<li>Every block of the grotto is <strong>protected</strong>: it cannot be mined, blasted or emptied with a bucket, and nothing but a meditation cushion can be placed.</li>
+</ul>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Grade</th>
+<th>Income per dawn</th>
+<th>Pool</th>
+<th>Bottles per day</th>
+<th>Extra cultivation per second of meditation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low</td>
+<td>80</td>
+<td>Clear Spirit Pool</td>
+<td>12</td>
+<td>0.03% of your stage</td>
+</tr>
+<tr class="even">
+<td>Mid</td>
+<td>200</td>
+<td>Jade Spirit Pool</td>
+<td>8</td>
+<td>0.06%</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>500</td>
+<td>Violet Essence Pool</td>
+<td>6</td>
+<td>0.12%</td>
+</tr>
+<tr class="even">
+<td>Supreme</td>
+<td>1,200</td>
+<td>Golden Marrow Pool (with a spirit vein spring)</td>
+<td>4</td>
+<td>0.25%</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="spirit-veins--the-spirit-pool">The spirit pool</h3>
+<ul>
+<li>Stand <strong>in the pool or on its rim</strong> to gain <strong>Spirit Spring Infusion</strong>. While it lasts, <strong>meditating</strong> gives extra cultivation each second.</li>
+<li>Use a <strong>glass bottle</strong> at the pool to fill <strong>Spirit Spring Water</strong> (bottles refill each dawn). Drinking it gives the infusion for <strong>3 minutes</strong> anywhere.</li>
+<li>Only the owning sect may use a claimed pool; unclaimed pools are open to all.</li>
+<li>The spirit stone ore in the walls (and the Golden Marrow Pool’s spring) gives off qi naturally, so the whole grotto is a good place to cultivate.</li>
+</ul>
+</section>
+<section class="ch" id="ancient-battlefields"><h2>Ancient Battlefields</h2><p>Cursed fields where a fallen sect’s last war never ended: coarse earth and soul soil strewn with bones, skulls, broken pillars, soul lanterns and black banners around a cracked stele.</p>
+<ul>
+<li><strong>When</strong>: sometimes at dusk a battlefield surfaces 150-260 blocks from a player (at most 3 in the world). Everyone is told where. Battlefields appear on the Jade Slip’s <strong>Gates</strong> tab, where you can teleport to them.</li>
+<li><strong>By day</strong> they are quiet ruins.</li>
+<li><strong>At night</strong> spectral cultivators of the fallen sect rise (2 plus 2 per player nearby, up to 8) and attack anyone on the field, at about your own realm; one in five is a stronger <strong>Spectral Elder</strong>. They fade at dawn.</li>
+<li><strong>Drops</strong>: slain spectres drop <strong>Broken Artifacts</strong> (60%), graded by their realm.</li>
+<li><strong>Repair</strong>: use a Broken Artifact within 6 blocks of a <strong>Refining Core</strong> to play the forging minigame. 90%+ restores a weapon or treasure <strong>one tier higher</strong>, 60%+ of its tier, 30%+ a tier lower; below that it shatters.</li>
+<li><strong>Creative</strong>: the Jade Slip’s Gates tab has a <strong>☠ Battlefield</strong> button that raises one beside you (use <code>/time set night</code> to test the dead).</li>
+</ul>
+</section>
+<p class="part" data-part>Sects</p>
+<section class="ch" id="sect-bounty-board"><h2>Sect Bounty Board</h2><p>A board block that posts <strong>5 bounties a day</strong> for whoever reads it, scaled to your realm (Low to Supreme grade).</p>
+<ul>
+<li><strong>Recipe</strong> (shaped): planks across the top and bottom rows, Paper + Demon Bone + Paper in the middle.</li>
+<li>Right-click it to open the board. Take up to <strong>3</strong> bounties at once; new offers appear every morning.</li>
+</ul>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Bounty</th>
+<th>What to do</th>
+<th>Reward</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hunt</td>
+<td>Slay 3-9 of one kind of demon beast</td>
+<td>Base</td>
+</tr>
+<tr class="even">
+<td>Slay Rare Beasts</td>
+<td>Slay rare (or stronger) beasts, or a boss at High grade and up</td>
+<td>×1.5</td>
+</tr>
+<tr class="odd">
+<td>Clear Cave Guardians</td>
+<td>Slay 3-9 spirit-cave guardians</td>
+<td>×1.6</td>
+</tr>
+<tr class="even">
+<td>Deliver</td>
+<td>Bring herbs, demon bones or demon cores to the board</td>
+<td>×0.8</td>
+</tr>
+<tr class="odd">
+<td>Break a Beast Tide</td>
+<td>Be there when a beast tide is broken</td>
+<td>×2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Base rewards are 40, 150, 500 and 1,500 stones by grade. Kills by your companion beasts count. Finished bounties are claimed at any board; the stones come to you, and your sect’s treasury gets a 20% share plus 1 prestige for every 5 bounties.</p>
+<p><strong>Send disciple</strong> (sect masters): hunts and cave clearings can be handed to your strongest idle disciple within 64 blocks. They set out on a hunting mission; if they return successfully, the full reward goes to your treasury.</p>
+</section>
+<section class="ch" id="generated-sects"><h2>Generated Sects</h2><p>The main mod’s sects are ranked Lower, Middle or Higher. Rank sets the cultivation of the sect’s leaders, the grade of its protection array, the look of its buildings and the grade of its spirit cave.</p>
+<h3 id="generated-sects--sect-ranks">Sect ranks</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Share of sects</th>
+<th>Sect Master cultivation</th>
+<th>Ancestor</th>
+<th>Protection array</th>
+<th>Cave</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lower</td>
+<td>about 50%</td>
+<td>Foundation Building to Golden Core</td>
+<td>weakest</td>
+<td>Low or Mid</td>
+<td>Mid-grade</td>
+</tr>
+<tr class="even">
+<td>Middle</td>
+<td>about 33%</td>
+<td>Nascent Soul to Soul Formation</td>
+<td>stronger</td>
+<td>High</td>
+<td>High-grade</td>
+</tr>
+<tr class="odd">
+<td>Higher</td>
+<td>about 17%</td>
+<td>Void Refining to Mahayana</td>
+<td>likely an immortal</td>
+<td>Supreme or Immortal</td>
+<td>Supreme-grade</td>
+</tr>
+</tbody>
+</table></div>
+<p>Elders and disciples are scaled below their master. A sect’s name shows its rank and alignment, for example <em>Azure Cloud Sect [Middle · Righteous]</em>. Buildings are restyled by rank (humble, stately, grand) and alignment (righteous, neutral, demonic). On first start the addon raises the main mod’s sect spawn chance from 0.34 to 0.6, unless you have set your own value.</p>
+<h3 id="generated-sects--protection-arrays">Protection arrays</h3>
+<p>Every generated sect has a protection array whose flags, core plate and spirit vein core are all the <strong>same grade</strong>, so the plate holds exactly what its vein core supplies. The dome’s colour shows the rank: green for lower, blue for middle, gold for higher.</p>
+<p>A protection dome spends qi for every point of damage it turns aside, and its other flags (maze, rejuvenation) drain qi for the space they cover. The addon raises how much spirit vein cores and core plates store and supply, so arrays keep running between attacks:</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Grade</th>
+<th>Stores (qi)</th>
+<th>Supplies (qi/s)</th>
+<th>Qi per point of damage blocked</th>
+<th>Damage the full dome holds</th>
+<th>Dome recovery (damage/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low</td>
+<td>400,000</td>
+<td>1,500</td>
+<td>1,000</td>
+<td>400</td>
+<td>1.5</td>
+</tr>
+<tr class="even">
+<td>Mid</td>
+<td>600,000</td>
+<td>3,000</td>
+<td>500</td>
+<td>1,200</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>1,000,000</td>
+<td>6,000</td>
+<td>200</td>
+<td>5,000</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>Supreme</td>
+<td>2,000,000</td>
+<td>12,000</td>
+<td>50</td>
+<td>40,000</td>
+<td>240</td>
+</tr>
+<tr class="odd">
+<td>Immortal</td>
+<td>5,000,000</td>
+<td>30,000</td>
+<td>10</td>
+<td>500,000</td>
+<td>3,000</td>
+</tr>
+</tbody>
+</table></div>
+<p>An idle array runs indefinitely. A strong attacker can still break a low or mid dome, but it holds long enough for the sect to answer; supreme and immortal domes need a truly powerful cultivator. These numbers apply to every spirit vein core and core plate, including the ones you place yourself.</p>
+<h3 id="generated-sects--sect-survey-jade-slip">Sect Survey Jade Slip</h3>
+<p>Right-click to list the nearest sects with their rank, alignment and distance (your vassals show your emblem). Channel qi into a row to teleport there. Tabs:</p>
+<ul>
+<li><strong>Sects</strong>: the nearest sects.</li>
+<li><strong>Mines</strong>: the spirit stone caves found so far, with their grade.</li>
+<li><strong>Gates</strong>: open secret realm gates and ancient battlefields.</li>
+<li><strong>Veins</strong>: spirit vein grottos and who holds them.</li>
+</ul>
+<p>In creative mode the Gates and Veins tabs have buttons to open a gate, raise a vein or raise a <strong>☠ Battlefield</strong> beside you.</p>
+</section>
+<section class="ch" id="player-sects"><h2>Player Sects</h2><p>With the Sect Master’s Command Token you found your own sect, recruit wandering cultivators, give them ranks and duties, pay them every dawn, and send them on missions. Right-click the token to open the sect ledger.</p>
+<h3 id="player-sects--founding">Founding</h3>
+<ul>
+<li>Founding costs <strong>30 spirit stones</strong> carried in your inventory. Your headquarters is where you stand; move it later with <em>Set headquarters here</em>.</li>
+<li>You can lead <strong>6 + 3 per realm</strong> disciples (6 as a mortal, 9 at Qi Refining, 12 at Foundation Building, and so on).</li>
+<li>The <strong>Overview</strong> tab holds the treasury: <em>Deposit all spirit stones</em> converts carried stones into treasury value (1 low = 1, mid = 9, high = 81, supreme = 729), and the <em>Take</em> buttons withdraw them. You can rename or disband the sect here; disbanding returns the treasury and storehouse to you.</li>
+</ul>
+<h3 id="player-sects--recruiting">Recruiting</h3>
+<p>Wandering cultivators within 32 blocks appear in the <strong>Recruit</strong> tab, or sneak and use the token on one.</p>
+<ul>
+<li><strong>Signing gift</strong>: three days of their standard wage, paid from the treasury.</li>
+<li><strong>Chance to accept</strong>: 45%, plus up to 35% for their favour toward you (minus up to 40% if they dislike you), plus 2% per current disciple (up to 15%), minus 12% for every realm they stand above you. Always between 5% and 95%.</li>
+<li>A refusal costs favour and they will not listen again until the next day.</li>
+<li>Cultivators already in a sect, hostile to you, or in special states cannot be recruited.</li>
+</ul>
+<h3 id="player-sects--ranks-and-wages">Ranks and wages</h3>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Wage</th>
+<th>Needs</th>
+<th>Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Grand Elder</td>
+<td>300%</td>
+<td>Golden Core</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Elder</td>
+<td>200%</td>
+<td>Foundation Building</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>Inner Disciple</td>
+<td>130%</td>
+<td>Qi Refining</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Outer Disciple</td>
+<td>100%</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Servant</td>
+<td>60%</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Promoting raises loyalty by 8; demoting lowers it by 10. New recruits start as Servants (Qi Refining and below) or Outer Disciples.</p>
+<p>Standard daily wage by realm, in low spirit stones:</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Realm</th>
+<th>Wage</th>
+<th>Realm</th>
+<th>Wage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mortal</td>
+<td>1</td>
+<td>Soul Formation</td>
+<td>400</td>
+</tr>
+<tr class="even">
+<td>Qi Refining</td>
+<td>3</td>
+<td>Void Refining</td>
+<td>1,300</td>
+</tr>
+<tr class="odd">
+<td>Foundation Building</td>
+<td>10</td>
+<td>Body Integration</td>
+<td>4,000</td>
+</tr>
+<tr class="even">
+<td>Golden Core</td>
+<td>35</td>
+<td>Mahayana</td>
+<td>12,000</td>
+</tr>
+<tr class="odd">
+<td>Nascent Soul</td>
+<td>120</td>
+<td>Tribulation Transcendence</td>
+<td>36,000</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>Immortal</td>
+<td>100,000</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="player-sects--pay-and-loyalty">Pay and loyalty</h3>
+<ul>
+<li><strong>Payday</strong> is every dawn. Each disciple is paid their wage (standard wage x rank x their pay setting) from the treasury.</li>
+<li>Paid on time: loyalty +2, more for pay above 100% (up to +7), less below it (down to -3). Unpaid: loyalty -15.</li>
+<li><strong>Pay -10% / +10%</strong> sets an individual’s pay from 50% to 300%. <strong>Reward</strong> pays a bonus of two days’ wage for +12 loyalty.</li>
+<li>A disciple whose loyalty reaches 0 deserts. Seclusion adds +3 loyalty a day.</li>
+</ul>
+<h3 id="player-sects--duties">Duties</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Duty</th>
+<th>What they do</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Escort</td>
+<td>Follows and protects you; catches up by teleport when left more than 28 blocks behind</td>
+</tr>
+<tr class="even">
+<td>Guard Post</td>
+<td>Stands guard at their post, or at the headquarters</td>
+</tr>
+<tr class="odd">
+<td>Patrol</td>
+<td>Walks a 24-block circuit around their post or the headquarters</td>
+</tr>
+<tr class="even">
+<td>Mine Spirit Stones</td>
+<td>Brings spirit stones worth about their standard wage to the storehouse each dawn</td>
+</tr>
+<tr class="odd">
+<td>Gather Herbs</td>
+<td>Brings pill herbs (more and better with realm) to the storehouse each dawn</td>
+</tr>
+<tr class="even">
+<td>Seclusion</td>
+<td>Cultivates quietly; +3 loyalty a day</td>
+</tr>
+</tbody>
+</table></div>
+<p>The <strong>Storehouse</strong> tab holds 54 slots of whatever miners, gatherers and missions bring back; click an item to take it.</p>
+<h3 id="player-sects--orders">Orders</h3>
+<p>Select a disciple in the <strong>Disciples</strong> tab:</p>
+<ul>
+<li><strong>Stance</strong>: <em>Protect</em> (defends you, their post and fellow disciples), <em>Attack</em> (hunts any hostile creature within 16 blocks), or <em>Hold Fire</em> (never starts or joins a fight).</li>
+<li><strong>Stay here</strong> makes the spot you stand on their post; <strong>Use HQ</strong> sends them back to the headquarters.</li>
+<li><strong>Assign bed</strong>: look at a bed, or stand next to one. At night they walk to it and sleep, waking if hurt. Escorts only sleep when you do.</li>
+<li><strong>Summon</strong> brings a disciple to your side if they are loaded in the same world.</li>
+<li><strong>Attack my target</strong>: aim at a creature (within 48 blocks) and press it, or simply use the token while aiming. Every disciple within 64 blocks that is not on Hold Fire attacks. <strong>Stand down</strong> calls them off.</li>
+</ul>
+<h3 id="player-sects--missions">Missions</h3>
+<p>A disciple sent on a mission leaves the world, and returns to the headquarters (or to you, if the headquarters is not loaded) with the spoils. The screen shows the reward, duration and success chance before you send them.</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Mission</th>
+<th>Reward</th>
+<th>Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hunt Demon Beasts</td>
+<td>Spirit stones, demon bones, 50% chance of a spirit vein core</td>
+<td>Normal</td>
+</tr>
+<tr class="even">
+<td>Herb Expedition</td>
+<td>Several stacks of pill herbs</td>
+<td>+5%</td>
+</tr>
+<tr class="odd">
+<td>Explore Ancient Ruins</td>
+<td>A foundation-level technique manual, 60% chance of a spell manual, some stones</td>
+<td>-10%</td>
+</tr>
+<tr class="even">
+<td>Escort a Caravan</td>
+<td>A large purse of spirit stones</td>
+<td>+10%</td>
+</tr>
+<tr class="odd">
+<td>Train at a Spirit Peak</td>
+<td>A big jump in the disciple’s own cultivation</td>
+<td>+15%</td>
+</tr>
+</tbody>
+</table></div>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Grade</th>
+<th>Meant for</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low</td>
+<td>Qi Refining</td>
+<td>5 min</td>
+</tr>
+<tr class="even">
+<td>Mid</td>
+<td>Foundation Building</td>
+<td>8 min</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>Golden Core</td>
+<td>11 min</td>
+</tr>
+<tr class="even">
+<td>Supreme</td>
+<td>Nascent Soul</td>
+<td>14 min</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Success chance</strong>: 65%, plus the mission’s difficulty, plus 15% for each realm above the grade’s realm (minus 15% for each below), plus a little for high loyalty. Between 5% and 97%.</li>
+<li><strong>Success</strong>: rewards go to the storehouse, loyalty +5.</li>
+<li><strong>Failure</strong>: they come back at 30% health, loyalty -4. A failed disciple can die: 3% plus 12% for every realm they stood below the grade.</li>
+<li><strong>Recall</strong> brings them back early, empty-handed. Wages are still paid while they are away.</li>
+</ul>
+</section>
+<section class="ch" id="building-your-sect"><h2>Building Your Sect</h2><p>The <strong>Build</strong> tab of the ledger raises sect buildings: pick a design and a style, lay the blueprint, gather the materials it lists, and your disciples build it block by block.</p>
+<h3 id="building-your-sect--designs">Designs</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Design</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sect Gate</td>
+<td>The great gate that marks your grounds</td>
+</tr>
+<tr class="even">
+<td>Pillared Gatehouse</td>
+<td>A guarded gatehouse for the approach</td>
+</tr>
+<tr class="odd">
+<td>Main Hall</td>
+<td>The grand hall where the Sect Master holds court</td>
+</tr>
+<tr class="even">
+<td>Sect Arena</td>
+<td>A colosseum for duels and tournaments; needed to host them</td>
+</tr>
+<tr class="odd">
+<td>Disciple Residence</td>
+<td>Quarters for inner and outer disciples</td>
+</tr>
+<tr class="even">
+<td>Servants’ Quarters</td>
+<td>Modest lodgings for servants</td>
+</tr>
+<tr class="odd">
+<td>Treasure Pavilion</td>
+<td>A vault pavilion with a storage formation</td>
+</tr>
+<tr class="even">
+<td>Pavilion</td>
+<td>A tall pavilion for meditation and views</td>
+</tr>
+<tr class="odd">
+<td>Alchemy Furnace</td>
+<td>An open-air pill furnace with an alchemy core</td>
+</tr>
+<tr class="even">
+<td>Forging Furnace</td>
+<td>A refining furnace for weapons and treasures</td>
+</tr>
+<tr class="odd">
+<td>Ancestor’s Cave</td>
+<td>A secluded cultivation cave fed by a spirit vein spring</td>
+</tr>
+<tr class="even">
+<td>Street Lantern</td>
+<td>A stone lantern to light the paths</td>
+</tr>
+<tr class="odd">
+<td>Scripture Pagoda</td>
+<td>The six-storey sect library (needs a Scripture Altar; see <em>The Scripture Pagoda</em>)</td>
+</tr>
+</tbody>
+</table></div>
+<p>The designs are the main mod’s own sect buildings. Ore blocks in them become plain stone, and their containers start empty.</p>
+<h3 id="building-your-sect--styles">Styles</h3>
+<p>Nine styles combine three grandeurs (Humble, Stately, Grand) with three alignments (Righteous, Neutral, Demonic). The style changes the stone, wood and trim, and so the materials needed.</p>
+<h3 id="building-your-sect--step-by-step">Step by step</h3>
+<ol type="1">
+<li>Choose a design, a style and a facing. The <strong>Materials to gather</strong> grid shows the full bill.</li>
+<li>Press <strong>Preview hologram</strong>: a see-through, glowing copy of the building follows you. Walk to the spot.</li>
+<li>Sneak and use the token (or press <strong>Lay blueprint here</strong>) to fix it in place. A golden outline marks the site; <strong>Hide outline</strong> switches the lines off and on.</li>
+<li>Carry the materials and press <strong>Deliver materials</strong>. Matching blocks are taken from your inventory; the grid shows delivered / needed. You can still <strong>Move here</strong>, <strong>Turn</strong> or <strong>Cancel blueprint</strong> (delivered materials are returned).</li>
+<li>When everything is delivered, construction starts. About 60 blocks a second go up while the site is loaded, after any dips under the footprint are filled with foundation.</li>
+</ol>
+<p><strong>Creative mode</strong>: the button reads <strong>Build now (creative)</strong>. It needs no materials and builds much faster.</p>
+<h3 id="building-your-sect--the-sect-arena">The Sect Arena</h3>
+<p>A 35 x 35 colosseum: a round fighting pit of smooth stone with polished rings and two fighters’ marks, a low barrier with lanterns, four tiers of stone seating, a crenellated outer wall with lantern posts, and two fighters’ gates (west and east) cut through the stands.</p>
+<p>When it is finished, the arena is registered to your sect. Tournaments and contests hosted by your sect are fought there: fighters enter through the gates, and knocked-out fighters are carried to the front row of the north stand.</p>
+</section>
+<section class="ch" id="sect-life"><h2>Sect Life</h2><p>Your sect lives on its own: its buildings work each morning, its disciples have personalities, small dramas unfold, and every sect in the world is ranked.</p>
+<h3 id="sect-life--buildings-that-work">Buildings that work</h3>
+<p>Each morning a finished building does its job, and the sect record notes what happened.</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Building</th>
+<th>Each morning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alchemy Furnace</td>
+<td>Refines up to 2 pills from 3 storehouse herbs of the best grade on hand</td>
+</tr>
+<tr class="even">
+<td>Forging Furnace</td>
+<td>Refines the best demon core in the storehouse: 35% chance of a treasure, otherwise sells the essence for 20 x tier² stones</td>
+</tr>
+<tr class="odd">
+<td>Pavilion</td>
+<td>Disciples meditate there: loyalty +1 for everyone</td>
+</tr>
+<tr class="even">
+<td>Ancestor’s Cave</td>
+<td>Its spirit vein feeds qi to every companion beast within 48 blocks of the headquarters</td>
+</tr>
+<tr class="odd">
+<td>Treasure Pavilion</td>
+<td>Its formation pays 1% interest on the treasury, at most 250 stones a day</td>
+</tr>
+<tr class="even">
+<td>Scripture Pagoda</td>
+<td>Opens the sect library and its guardians (see <em>Scripture Pagoda</em>)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="sect-life--personalities">Personalities</h3>
+<p>Every disciple has a trait.</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Trait</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Diligent</td>
+<td>Loyalty +1 a day; missions +10%</td>
+</tr>
+<tr class="even">
+<td>Lazy</td>
+<td>Missions -10%</td>
+</tr>
+<tr class="odd">
+<td>Ambitious</td>
+<td>May train through the night and inspire the others (loyalty +5)</td>
+</tr>
+<tr class="even">
+<td>Loyal</td>
+<td>Loyalty never falls below 50</td>
+</tr>
+<tr class="odd">
+<td>Greedy</td>
+<td>Loyalty -1 a day unless paid 120% or more; may desert with stolen stones</td>
+</tr>
+<tr class="even">
+<td>Reckless</td>
+<td>Missions +5%</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="sect-life--dramas">Dramas</h3>
+<p>On about one morning in four, something happens: a rivalry (loyalty -5 for two disciples), a <strong>betrayal</strong> (a greedy or disloyal disciple deserts with up to 10% of the treasury, at most 500), an inner demon that wounds a cultivator, a talented youth begging at the gate (recruit them with the token), or a dying wandering elder who leaves a manual to the storehouse.</p>
+<h3 id="sect-life--rankings-and-the-grand-ceremony">Rankings and the Grand Ceremony</h3>
+<p>The <strong>Rankings</strong> view of the ledger ranks every player and generated sect. Score: prestige x10, titles x25, war kills x2, members x3, realms cleared x15.</p>
+<p>Every <strong>30 days</strong> at midday the Grand Ceremony is announced to everyone, and the top three player sects are rewarded:</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Place</th>
+<th>Prestige</th>
+<th>Stones</th>
+<th>Other</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1st</td>
+<td>+5</td>
+<td>3,000</td>
+<td>The title of the year</td>
+</tr>
+<tr class="even">
+<td>2nd</td>
+<td>+3</td>
+<td>1,500</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3rd</td>
+<td>+2</td>
+<td>700</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="sect-life--champion-duels">Champion duels</h3>
+<p>From the Relations tab, challenge a generated sect you are not at war with to send its <strong>Champion</strong> (Qi Refining up to Foundation Building, Golden Core or Soul Formation by the sect’s rank, never more than one realm above you). Defeat them within <strong>5 minutes</strong>; your disciples and beasts may help. Victory pays 200 / 800 / 2,500 stones, prestige +2 and +5 attitude. Once every 7 days per sect.</p>
+<h3 id="sect-life--finances">Finances</h3>
+<p>The <strong>Finances</strong> tab of the ledger shows where your stones come from and where they go:</p>
+<ul>
+<li><strong>Expected each dawn</strong>: vein income, alliance gifts, vassal tribute and tax, interest, miners, minus the wages of every disciple.</li>
+<li><strong>Today</strong> and <strong>Yesterday</strong>: every line actually booked (veins, forge sales, raids, ransoms, ceremony purses, thefts, coups and so on), with the net result.</li>
+</ul>
+<h3 id="sect-life--sparring">Sparring</h3>
+<p>Select a disciple and press <strong>Spar</strong> to fight them, in your arena if you have one. Nobody dies: a bout ends when either side would fall, or after 3 minutes (a draw). One bout per disciple per day.</p>
+<ul>
+<li><strong>You win</strong>: loyalty +8, and a lesson. After 2 + (realm / 2) lessons the disciple breaks through a realm, never past one below you (and never past Body Integration).</li>
+<li><strong>They win</strong>: loyalty +3, and they teach you one of their techniques or spells as a manual.</li>
+</ul>
+<h3 id="sect-life--elder-succession">Elder succession</h3>
+<p>If you fall in a siege or to a heavenly tribulation, your Grand Elder (or your strongest elder) becomes <strong>regent</strong> until you return.</p>
+<ul>
+<li>A regent with loyalty <strong>40 or more</strong> keeps the sect safe and hands back the seal (loyalty +5).</li>
+<li>A disloyal regent stages a <strong>coup</strong>: they take 25% of the treasury and leave with up to a third of the disciples whose loyalty is below 50.</li>
+</ul>
+</section>
+<section class="ch" id="the-scripture-pagoda"><h2>The Scripture Pagoda</h2><p>A great six-storey pagoda that holds your sect’s technique and spell manuals. Disciples earn <strong>merit</strong> and spend it on manuals; each floor holds better ones and is watched by stronger guardians.</p>
+<h3 id="the-scripture-pagoda--building-it">Building it</h3>
+<ol type="1">
+<li>Craft the <strong>Scripture Altar</strong> (shaped: book / gold ingots / lectern / stone bricks; see <em>Items and Recipes</em>).</li>
+<li>Raise the <strong>Scripture Pagoda</strong> design from the Build tab. It is 31 x 31 and six storeys tall, with tiled eaves, windows, lanterns, bookshelves, reading desks and a ladder up the central pillar.</li>
+<li>Each floor has an altar at its centre. Use it to open that floor’s library.</li>
+</ol>
+<h3 id="the-scripture-pagoda--floors">Floors</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Floor</th>
+<th>Name</th>
+<th>Manuals</th>
+<th>Price in merit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Hall of Foundations</td>
+<td>Low grade</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Hall of the Golden Core</td>
+<td>Mid grade</td>
+<td>80</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Hall of Souls</td>
+<td>High grade</td>
+<td>200</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Hall of Heaven</td>
+<td>Supreme grade</td>
+<td>500</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Immortal Sutra Hall</td>
+<td>Immortal grade</td>
+<td>1,200</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Guardian’s Peak</td>
+<td>The pagoda’s crown and the senior guardian’s post</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Record</strong>: hold a technique or spell manual and press <em>Deposit</em> at any altar. The manual is used up and shelved on the floor of its grade.</li>
+<li><strong>Copy</strong>: any member may have a recorded scripture transcribed for themselves at its floor’s altar, paying its price in their own merit. The original stays.</li>
+<li><strong>Teach</strong>: the Sect Master can assign a recorded scripture to a disciple, who pays from their own merit and learns it on the spot.</li>
+<li><strong>Donate</strong>: 500 stones from your treasury buy you 100 merit.</li>
+</ul>
+<h3 id="the-scripture-pagoda--merit">Merit</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Merit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Daily, by rank (Grand Elder / Elder / Inner / Outer / Servant)</td>
+<td>8 / 6 / 4 / 3 / 1</td>
+</tr>
+<tr class="even">
+<td>A successful mission</td>
+<td>8 x (grade + 1)</td>
+</tr>
+<tr class="odd">
+<td>A bounty</td>
+<td>5 - 80</td>
+</tr>
+<tr class="even">
+<td>Breaking a beast tide</td>
+<td>25 for the master, 15 for each member present</td>
+</tr>
+<tr class="odd">
+<td>A successful raid</td>
+<td>40 + 20 x the sect’s tier</td>
+</tr>
+<tr class="even">
+<td>Conquering a secret realm</td>
+<td>60</td>
+</tr>
+<tr class="odd">
+<td>Kills by a disciple</td>
+<td>1 / 3 / 5 (by the foe’s strength)</td>
+</tr>
+<tr class="even">
+<td>Donation at the altar</td>
+<td>500 stones for 100 merit</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="the-scripture-pagoda--guardians">Guardians</h3>
+<p>Assign disciples of Elder rank or above to guard a floor. Guardians stand at that floor’s post, learn the techniques of their floor’s tier, and are raised to Foundation Building plus their floor (or their own strength plus the floor, whichever is lower), so the top floors are held by the strongest.</p>
+<h3 id="the-scripture-pagoda--where-manuals-come-from">Where manuals come from</h3>
+<ul>
+<li><strong>Generated sect chests</strong> and the <em>Explore Ancient Ruins</em> mission only hold <strong>foundation-level (Low)</strong> manuals.</li>
+<li><strong>Higher manuals</strong> are found only in <strong>secret realms</strong> and <strong>spirit stone caves</strong>.</li>
+</ul>
+<h3 id="the-scripture-pagoda--stealing-scriptures">Stealing scriptures</h3>
+<p>Generated sects keep their own pavilions and pagodas. Sneak into one and open a chest to try to steal: a <strong>skill-check minigame</strong> opens, <em>Dead by Daylight</em> style. A needle sweeps round a dial; press SPACE when it is inside the white zone (the small bright zone is a <em>great</em> check). Several checks in a row:</p>
+<ul>
+<li><strong>All passed</strong>: you take a manual of the sect’s rank (Lower: Low, Middle: up to Mid, Higher: up to High), sometimes stones too.</li>
+<li><strong>A missed check</strong>: the alarm sounds, the sect’s attitude drops, its members attack, and your <strong>notoriety</strong> rises.</li>
+<li>Once every 3 days per generated sect.</li>
+</ul>
+</section>
+<section class="ch" id="relations-between-sects"><h2>Relations Between Sects</h2><p>The <strong>Relations</strong> tab of the ledger lists every other player-founded sect with its master, size, prestige, arena, and your standing with it. Below them come the <strong>20 nearest generated sects</strong> in your sect’s world, so diplomacy works in single player too (see <em>Generated sects</em> below).</p>
+<h3 id="relations-between-sects--standings">Standings</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Standing</th>
+<th>How it starts</th>
+<th>Effect</th>
+<th>How it ends</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Neutral</td>
+<td>Default</td>
+<td>None</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Allied</td>
+<td>You propose; their master accepts</td>
+<td>No harm between the two sects; allied disciples help when your master is attacked</td>
+<td>Either side presses <em>Break alliance</em></td>
+</tr>
+<tr class="odd">
+<td>At War</td>
+<td>Either side declares it (no consent needed)</td>
+<td>Disciples not on Hold Fire attack the enemy’s disciples and master on sight (within 14 blocks); kills are scored</td>
+<td>A peace offer is accepted, or one side surrenders</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>War score</strong>: each enemy disciple or master slain by your side counts one point, shown as <em>ours : theirs</em> and recorded in both sects’ records.</li>
+<li><strong>Offer peace</strong>: a proposal the enemy master must accept. Both scores are recorded when the war ends.</li>
+<li><strong>Surrender</strong>: ends the war at once; you pay <strong>20% of your treasury</strong> to the other sect.</li>
+<li>Declaring war on an ally dissolves the alliance first.</li>
+</ul>
+<h3 id="relations-between-sects--offers">Offers</h3>
+<p>Alliance proposals, peace offers, trades and contest challenges wait in the <strong>Offers</strong> view, incoming and outgoing. Incoming offers have <em>Accept</em> and <em>Decline</em>; your outgoing ones can be withdrawn. A sect holds at most 12 waiting offers.</p>
+<h3 id="relations-between-sects--trade">Trade</h3>
+<ol type="1">
+<li>Select a sect and press <strong>Trade</strong>.</li>
+<li>Click items in <strong>your storehouse</strong> to give them, and items in <strong>theirs</strong> to ask for them; selected slots turn gold.</li>
+<li>Optionally add spirit stones you pay and spirit stones you ask for, then <strong>Send offer</strong>.</li>
+<li>Nothing moves until their master accepts. If either side no longer holds the goods or the stones by then, the trade fails safely and both sides are told why.</li>
+</ol>
+<p>There is no trade with a sect you are at war with.</p>
+<h3 id="relations-between-sects--generated-sects">Generated sects</h3>
+<p>Each generated sect has an <strong>attitude</strong> toward your sect, from -100 to +100, shown on its row as Friendly (30+), Indifferent, Wary or Hostile (-50 or lower). It starts at +10 for righteous sects, 0 for neutral ones and -10 for evil ones, and slowly drifts back there over the days.</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Raises attitude</th>
+<th>Lowers attitude</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Send gift</strong>: stones from your treasury, at most +25 per gift</td>
+<td>One of your people kills one of their members: -20</td>
+</tr>
+<tr class="even">
+<td>Helping them break a beast tide: +15</td>
+<td>Declaring war on them: -40</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Breaking an alliance with them: -20</td>
+</tr>
+</tbody>
+</table></div>
+<p>Bigger sects scorn small gifts: one point costs 50 stones for a Lower sect, 200 for a Middle sect and 800 for a Higher sect.</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Action</th>
+<th>Condition</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Propose alliance</td>
+<td>Attitude 30+, prestige 0 (Lower), 3 (Middle) or 8 (Higher), and they hold no grudge against your people</td>
+<td>They send 5, 15 or 40 stones to your treasury each dawn. The alliance ends if their attitude falls below 10 or your people kill one of their members</td>
+</tr>
+<tr class="even">
+<td>Declare war</td>
+<td>None</td>
+<td>Their members hunt your master and disciples; your disciples (not on Hold Fire) attack theirs on sight; kills are scored both ways</td>
+</tr>
+<tr class="odd">
+<td>Demand peace</td>
+<td>At war, and your kill score leads theirs by 3 or more</td>
+<td>The war ends on your terms</td>
+</tr>
+<tr class="even">
+<td>Pay tribute</td>
+<td>At war, or they hold a grudge</td>
+<td>300 (Lower), 1,500 (Middle) or 6,000 (Higher) stones: the war ends, or old grudges against your people are forgotten (<em>Make amends</em>)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>They can declare war on you.</strong> At dawn, a sect within 3,000 blocks whose attitude is -50 or lower has a 30% chance to declare war.</li>
+<li><strong>War parties.</strong> At dusk, a generated sect at war with yours has a 35% chance to send a war party instead of a beast tide: three waves of its disciples, then elders and a War Leader, glowing red. Break it for the usual tide rewards and <strong>+3 war score</strong>; if it prevails, they gain +3 and your sect is plundered like a lost tide.</li>
+<li><strong>Lead a raid.</strong> At war, press <em>Lead a raid</em>: within 15 minutes, slay 5 / 8 / 12 of their members (Lower / Middle / Higher) on their grounds. Your master, disciples and companion beasts all count. Success sacks the sect: <strong>400 / 1,500 / 5,000 stones</strong> to your treasury, prestige +2, war score +5. Once every 3 days per sect.</li>
+<li><strong>They can sue for peace.</strong> If they are losing a war by 8 kills or more, they may give up at dawn; your sect gains 1 prestige.</li>
+<li><strong>Lay siege.</strong> With a war score of 8 or more you can besiege the sect and make it your vassal (see <em>War, Sieges and Vassals</em>).</li>
+<li>Settling with one sect only clears hostility with that sect, not with the others.</li>
+<li>A destroyed sect drops off the list and any relation with it ends. Contests and trades are only between player sects.</li>
+</ul>
+<h3 id="relations-between-sects--contests">Contests</h3>
+<p>A contest is a single fight between two sects, staked with stones from both treasuries.</p>
+<ul>
+<li>Choose the size (1 v 1, 2 v 2, 3 v 3 or 5 v 5) and a stake, and press <strong>Challenge</strong>. You need a finished Sect Arena: contests are fought in the challenger’s arena.</li>
+<li>When the other master accepts, both stakes are taken and a two-entrant tournament opens for just these two sects. Each enters a team with a Tournament Banner, and the challenger starts it.</li>
+<li>The pool of both stakes is split 70% to the winning sect and 30% to the losing sect.</li>
+</ul>
+</section>
+<section class="ch" id="tournaments"><h2>Tournaments</h2><p>A sect with a finished Sect Arena can host single-elimination tournaments of duels or group fights. Use a <strong>Tournament Banner</strong> to open the tournament board: the list of tournaments on the left, the selected one on the right.</p>
+<h3 id="tournaments--hosting">Hosting</h3>
+<p>Press <strong>Host a tournament</strong> and choose:</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Choices</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Format</td>
+<td>Duels (1 v 1), Group 2 v 2, Group 3 v 3, Group 5 v 5</td>
+</tr>
+<tr class="even">
+<td>Bracket</td>
+<td>4, 8 or 16 entrants</td>
+</tr>
+<tr class="odd">
+<td>Prize</td>
+<td>Spirit stones from your treasury</td>
+</tr>
+<tr class="even">
+<td>Entry fee</td>
+<td>Paid by other sects’ entrants; it adds to the prize pool</td>
+</tr>
+<tr class="odd">
+<td>Entrants</td>
+<td>Open to all sects (announced to the whole server), or your sect only</td>
+</tr>
+</tbody>
+</table></div>
+<p>A sect can host one tournament at a time.</p>
+<h3 id="tournaments--entering">Entering</h3>
+<ul>
+<li>Tick fighters in <strong>Your fighters</strong>: yourself and any disciple not away on a mission. Ticked rows turn gold; fighters already entered show a check.</li>
+<li><strong>Enter picked as a team</strong> enters up to the format’s team size. In duel tournaments, <strong>Enter picked</strong> enters each ticked fighter alone, and <strong>Enter all disciples</strong> enters every free disciple.</li>
+<li>A sect can enter several teams. Entries can be withdrawn before the start, and fees are refunded.</li>
+</ul>
+<h3 id="tournaments--the-bracket">The bracket</h3>
+<p>The host presses <strong>Start</strong> once there are at least two entrants. Entrants are shuffled into a bracket of the next power of two; empty places become byes, and a bye always goes to a real entrant. Exactly one bout is fought for every entrant knocked out.</p>
+<p>The board draws the bracket round by round, left to right: winners in gold, losers greyed, your sect’s entrants in blue, the bout in progress pulsing, and the champion at the end. Hover a name to see the team’s fighters.</p>
+<h3 id="tournaments--bouts">Bouts</h3>
+<ol type="1">
+<li>The host presses <strong>Begin next bout</strong>, or turns on <strong>Auto</strong> to start each bout 10 seconds after the last.</li>
+<li>The arena must be loaded (someone nearby). The two sides are healed and brought to the west and east gates. Masters are brought from anywhere; disciples must already be in the arena’s world.</li>
+<li>A side with nobody present loses by forfeit.</li>
+<li><strong>Nobody dies in a bout.</strong> A finishing blow knocks the fighter out instead: they are carried to the north stand with a quarter of their health.</li>
+<li>Only the two sides can hurt each other: spectators cannot interfere, and fighters cannot strike anyone else. A fighter who leaves the arena (more than 40 blocks from its centre) is out.</li>
+<li>A side wins when the other has no one standing. After 3 minutes the judges decide by remaining health.</li>
+<li>Everyone is healed and returned to where they stood before the bout.</li>
+</ol>
+<p>If the server restarts during a bout, that bout is replayed.</p>
+<h3 id="tournaments--rewards">Rewards</h3>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Place</th>
+<th>Share of the pool (4+ entrants)</th>
+<th>Share (2 entrants)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Champion</td>
+<td>60%</td>
+<td>70%</td>
+</tr>
+<tr class="even">
+<td>Runner-up</td>
+<td>25%</td>
+<td>30%</td>
+</tr>
+<tr class="odd">
+<td>Each losing semi-finalist</td>
+<td>7.5%</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>Shares go to each entrant’s sect treasury; anything left over returns to the host.</li>
+<li>The champion’s sect gains <strong>3 prestige</strong> and a tournament title; the runner-up’s sect gains 1 prestige.</li>
+<li>Champion disciples gain 15 loyalty and a quarter of the cultivation they need for their next breakthrough. Every bout won gives a disciple 3 loyalty.</li>
+<li>The whole server hears who won.</li>
+</ul>
+<p>The host can <strong>Cancel</strong> a tournament at any time: fees go back to the entrants and the prize back to the host (a contest’s stakes go back to both sects). A finished tournament stays on the board until the host presses <strong>Close tournament</strong>.</p>
+</section>
+<p class="part" data-part>War and danger</p>
+<section class="ch" id="war-sieges-and-vassals"><h2>War, Sieges and Vassals</h2><h3 id="war-sieges-and-vassals--sieges-on-your-sect">Sieges on your sect</h3>
+<p>When a generated sect is at war with yours, 30-50% of its dusk attacks become a full <strong>siege</strong> of your headquarters instead of a war party.</p>
+<ul>
+<li><strong>Five waves</strong> of its disciples, elders and a War Leader.</li>
+<li><strong>Array-breakers</strong>: beasts and cultivators that weaken your protection array as they reach it; break them first.</li>
+<li><strong>Catapult volleys</strong>: every 40 seconds a volley of flaming shot strikes near your headquarters.</li>
+<li><strong>Victory</strong>: 300 / 1,000 / 3,000 stones of spoils (Lower / Middle / Higher), prestige +3, war score +5. Some broken attackers surrender as <strong>prisoners</strong>.</li>
+<li><strong>Defeat</strong>: the sect is plundered (15% of the treasury).</li>
+</ul>
+<h3 id="war-sieges-and-vassals--besieging-a-generated-sect">Besieging a generated sect</h3>
+<p>At war, with a <strong>war score of 8 or more</strong>, press <strong>Lay siege</strong> in the Relations tab.</p>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Sect rank</th>
+<th>Cost to march</th>
+<th>Phase goals</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lower</td>
+<td>800</td>
+<td>Slay 8 defenders, then seize the formation nodes, then slay the Patriarch</td>
+</tr>
+<tr class="even">
+<td>Middle</td>
+<td>2,500</td>
+<td>Slay 12 defenders, then the nodes, then the Patriarch</td>
+</tr>
+<tr class="odd">
+<td>Higher</td>
+<td>8,000</td>
+<td>Slay 18 defenders, then the nodes, then the Patriarch</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>You have <strong>25 minutes</strong>. A boss bar shows the phase and the time left.</li>
+<li><strong>Formation nodes</strong>: stand by each glowing node for 15 seconds to seize it (or use a Formation-Breaking Talisman).</li>
+<li><strong>Victory</strong>: the sect becomes your <strong>vassal</strong>, you take double raid loot, and prestige +6.</li>
+<li>Once every 5 days per sect.</li>
+</ul>
+<h3 id="war-sieges-and-vassals--vassals">Vassals</h3>
+<p>The <strong>⚑ Vassals</strong> button on the ledger opens the vassal screen. Each vassal’s emblem also appears on your Survey slip.</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Lower</th>
+<th>Middle</th>
+<th>Higher</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Daily tribute (Normal tax)</td>
+<td>150</td>
+<td>500</td>
+<td>1,500</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Tax</strong>: Light (x0.5 tribute, attitude +3 a day), Normal (x1, +2), Heavy (x1.6, -2).</li>
+<li><strong>Muster troops</strong>: 200 x (rank + 1) stones per troop, up to 6. In your raids, sieges and defences the vassal sends 2 + troops / 2 <strong>auxiliaries</strong> who fight beside you.</li>
+<li><strong>Governor</strong>: station one of your elders there for +2 attitude a day.</li>
+<li><strong>Levy</strong>: demand a one-off payment now, at the cost of attitude.</li>
+<li><strong>Release</strong>: set the vassal free.</li>
+<li><strong>Rebellion</strong>: if attitude falls to -40 or lower, each dawn there is a 4% chance it rebels and declares war.</li>
+</ul>
+<h3 id="war-sieges-and-vassals--prisoners-and-ransom">Prisoners and ransom</h3>
+<p>Broken enemies sometimes surrender (15%, or 35% for elders and leaders). You hold at most 8.</p>
+<ul>
+<li><strong>Ransom</strong>: 100 x (rank + 1) + 60 x realm² stones, paid by their sect.</li>
+<li><strong>Recruit</strong>: a 50% chance they join you.</li>
+<li><strong>Trade for peace</strong>: give them back to end a war.</li>
+<li><strong>Release</strong>: free them for attitude.</li>
+</ul>
+<h3 id="war-sieges-and-vassals--coalitions">Coalitions</h3>
+<p>If you hold 2 or more vassals or 40 or more prestige, other sects grow afraid. Each dawn there is a 15% chance (at least 10 days apart) that up to 3 generated sects form a <strong>coalition</strong> and declare war together. The coalition breaks when 1 or fewer of its members remain at war with you; breaking it gives prestige +5.</p>
+<h3 id="war-sieges-and-vassals--siege-engines">Siege engines</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Engine</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Formation-Breaking Talisman</td>
+<td>In a siege you lead, use beside a formation node to seize it at once</td>
+</tr>
+<tr class="even">
+<td>Qi Battering Ram</td>
+<td>A shockwave that hurls back and batters every enemy within 8 blocks</td>
+</tr>
+<tr class="odd">
+<td>Flame Arrow Volley</td>
+<td>Rains fire on every enemy within 14 blocks, burning and wounding them</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section class="ch" id="notoriety-and-bounty-hunters"><h2>Notoriety and Bounty Hunters</h2><p>Crimes and wars make you famous in the wrong way. <strong>Notoriety</strong> is kept per player.</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Deed</th>
+<th>Notoriety</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Theft from a sect library</td>
+<td>+6 (+10 if caught)</td>
+</tr>
+<tr class="even">
+<td>Leading a raid</td>
+<td>+6</td>
+</tr>
+<tr class="odd">
+<td>Laying a siege</td>
+<td>+15</td>
+</tr>
+<tr class="even">
+<td>A kill in war</td>
+<td>+1 (one time in three)</td>
+</tr>
+<tr class="odd">
+<td>Each day</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table></div>
+<p>At <strong>30 or more</strong>, bounty hunters may come for you at night. Each has a fighting style: Lin Feng (Swift Blade), Zhao Shan (Iron Palm), Mei Xue (Frost Lotus), Han Lei (Thunder Spear), Ye Ying (Shadow Step) and Du Qing (Poison Needle).</p>
+<ul>
+<li><strong>Kill one</strong>: 150 x realm² stones and notoriety -15.</li>
+<li>They give up after 5 minutes.</li>
+</ul>
+</section>
+<section class="ch" id="demonic-threats-and-the-spirit-caravan"><h2>Demonic Threats and the Spirit Caravan</h2><h3 id="demonic-threats-and-the-spirit-caravan--demonic-threats">Demonic threats</h3>
+<ul>
+<li><strong>Assassins</strong>: at night, Golden Core cultivators and above have an 8% chance of being stalked by demonic assassins. Each carries a purse of 30 x (realm + 1) stones.</li>
+<li><strong>Kidnappings</strong>: a sect with 3 or more members may have a disciple kidnapped (6% a dawn). Their camp is 150-250 blocks away; slay the cultists and reach the cage within <strong>5 days</strong>, or the disciple is lost.</li>
+<li><strong>Tribulation aid</strong>: when the heavens send a tribulation, your companion beasts and nearby disciples take part of the lightning. Surviving gives <strong>Heaven’s Favour</strong>: regeneration, a qi barrier and strength for 5 minutes.</li>
+</ul>
+<h3 id="demonic-threats-and-the-spirit-caravan--the-spirit-caravan">The Spirit Caravan</h3>
+<p>Every <strong>4 days</strong> a Spirit Caravan Merchant arrives near a player for one day, selling cultivation goods and beast gear for spirit stones.</p>
+<ul>
+<li><strong>Auction</strong>: the caravan carries one rare lot (a treasure or a Gate Key). Sneak and right-click the merchant with spirit stones in hand to bid. Generated sects bid too.</li>
+<li>When the caravan leaves, the highest bidder takes the lot; outbid players get their stones back, even if offline.</li>
+</ul>
+</section>
+<p class="part" data-part>Crafting and items</p>
+<section class="ch" id="minigames"><h2>Minigames</h2><p>Crafting, sealing, stealing and taming are done by hand. Each opens its own screen; the score decides the result.</p>
+<h3 id="minigames--crafting-gates">Crafting gates</h3>
+<p>Normal brewing, forging and array activation are switched off: the cores of the main mod only work through a minigame.</p>
+<ul>
+<li><strong>Choose the recipe</strong> in the core’s own screen as usual (pick the pill, the weapon or the array), then press its button. The minigame starts; the craft goes ahead only when it ends.</li>
+<li><strong>Your rank matters</strong>: the higher your Alchemy or Refining rank, the easier the game (difficulty 3 at Apprentice down to 0 near Immortal), and the better the quality.</li>
+</ul>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Core</th>
+<th>Minigame</th>
+<th>Score effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alchemy Core</td>
+<td><strong>Pill refining</strong>: keep the furnace’s heat inside the moving band</td>
+<td>90%+: chance to rise a grade (+35%); 60%+: a steady batch; below 40%: part of the batch spoils; overheat and it explodes</td>
+</tr>
+<tr class="even">
+<td>Refining Core</td>
+<td><strong>Forging</strong>: strike as glowing beats reach the anvil</td>
+<td>90%+: masterwork, a grade higher (+40%); 60%+: clean; below 30%: lesser or cracked</td>
+</tr>
+<tr class="odd">
+<td>Formation Core Plate</td>
+<td><strong>Array activation</strong>: trace the runes</td>
+<td>60%+ activates the array; below that, try again</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="minigames--inscribe-a-flag">Inscribe a flag</h3>
+<p>In the Formation core screen, <strong>Inscribe a flag</strong> plays the rune game to make a formation flag (Qi Gathering, Rejuvenation, Sect Protection, Wither Growth or Flight Ban). Cost in stones by grade: 50 / 200 / 800 / 3,200 / 12,800 (Low to Immortal). A flawless score makes 2 flags (30% chance of a grade higher); 60%+ makes one; 30%+ makes one a grade lower.</p>
+<h3 id="minigames--other-minigames">Other minigames</h3>
+<div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Minigame</th>
+<th>When</th>
+<th>How to play</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Theft skill checks</td>
+<td>Opening a chest in a generated sect’s library</td>
+<td>Press SPACE while the needle is in the zone</td>
+</tr>
+<tr class="even">
+<td>Rune lock</td>
+<td>An Epic or Legendary cache in a conquered realm</td>
+<td>Stop each sealing ring with its rune at the top</td>
+</tr>
+<tr class="odd">
+<td>Breakthrough</td>
+<td>After rising a cultivation stage</td>
+<td>Steer the surging qi orb inside the shrinking circle. 80%+: +3% cultivation, strength and regeneration for 5 minutes; 50%+: +1%; below: qi deviation (weakened and slowed)</td>
+</tr>
+<tr class="even">
+<td>Herb uprooting</td>
+<td>Harvesting a spirit herb</td>
+<td>Pull steadily without tearing the root. 90%+: a spare herb; below 50%: half is lost</td>
+</tr>
+<tr class="odd">
+<td>Battle of wills</td>
+<td>Using a Beast Subduing Talisman</td>
+<td>Tap SPACE to win the tug-of-war</td>
+</tr>
+<tr class="even">
+<td>Talisman brush</td>
+<td>Completing a talisman at the Talisman table</td>
+<td>Trace the strokes; 40%+ seals the talisman. Spell scribing is unchanged</td>
+</tr>
+<tr class="odd">
+<td>Artifact repair</td>
+<td>A Broken Artifact near a Refining Core</td>
+<td>Forging rhythm; 90%+ restores it a tier higher</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section class="ch" id="items-and-recipes"><h2>Items and Recipes</h2><div class="tw"><table>
+
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>ID</th>
+<th>Recipe</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sect Survey Jade Slip</td>
+<td><code>xiaoxiang_sects:sect_survey_slip</code></td>
+<td>Shapeless: compass, demon bone, paper</td>
+<td>Sects, caves, gates, veins and battlefields; teleport to them</td>
+</tr>
+<tr class="even">
+<td>Sect Master’s Command Token</td>
+<td><code>xiaoxiang_sects:sect_command_token</code></td>
+<td>Shapeless: gold ingot, book, 3 low spirit stones</td>
+<td>Founds and runs your sect; recruits; orders attacks</td>
+</tr>
+<tr class="odd">
+<td>Tournament Banner</td>
+<td><code>xiaoxiang_sects:tournament_banner</code></td>
+<td>Shaped: stick, wool, stick / stick, wool, stick / <em>, low spirit stone, </em></td>
+<td>Opens the tournament board</td>
+</tr>
+<tr class="even">
+<td>Beast Tide Almanac</td>
+<td><code>xiaoxiang_sects:beast_almanac</code></td>
+<td>Cannot be crafted</td>
+<td>Spawn settings (creative or <code>/give</code>)</td>
+</tr>
+<tr class="odd">
+<td>Beast Subduing Talisman</td>
+<td><code>xiaoxiang_sects:beast_subduing_talisman</code></td>
+<td>Shapeless: talisman paper, demon core (tier 1), demon bone, lead (makes 2)</td>
+<td>Tames a beaten demon beast</td>
+</tr>
+<tr class="even">
+<td>Sect Bounty Board</td>
+<td><code>xiaoxiang_sects:sect_bounty_board</code></td>
+<td>Shaped: 3 planks / paper, demon bone, paper / 3 planks</td>
+<td>Daily bounties</td>
+</tr>
+<tr class="odd">
+<td>Scripture Altar</td>
+<td><code>xiaoxiang_sects:scripture_altar</code></td>
+<td>Shaped: <em>, book, </em> / gold ingot, lectern, gold ingot / 3 stone bricks</td>
+<td>The pagoda’s library altar</td>
+</tr>
+<tr class="even">
+<td>Spirit Spring Water</td>
+<td><code>xiaoxiang_sects:spirit_spring_water</code></td>
+<td>Fill a glass bottle at a vein’s pool</td>
+<td>3 minutes of Spirit Spring Infusion</td>
+</tr>
+<tr class="odd">
+<td>Gate Key</td>
+<td><code>xiaoxiang_sects:gate_key</code></td>
+<td>Realm loot, caravan auctions</td>
+<td>Opens a secret realm gate beside you</td>
+</tr>
+<tr class="even">
+<td>Iron Beast Armour</td>
+<td><code>xiaoxiang_sects:beast_iron_armor</code></td>
+<td>Shapeless: 5 iron ingots, leather, demon bone</td>
+<td>Companion armour</td>
+</tr>
+<tr class="odd">
+<td>Golden Beast Armour</td>
+<td><code>xiaoxiang_sects:beast_gold_armor</code></td>
+<td>Shapeless: 5 gold ingots, leather, demon bone</td>
+<td>Companion armour</td>
+</tr>
+<tr class="even">
+<td>Jade Beast Armour</td>
+<td><code>xiaoxiang_sects:beast_jade_armor</code></td>
+<td>Shapeless: 4 emeralds, diamond, leather, demon core (tier 3)</td>
+<td>Companion armour</td>
+</tr>
+<tr class="odd">
+<td>Flame Charm</td>
+<td><code>xiaoxiang_sects:beast_flame_charm</code></td>
+<td>Shapeless: talisman paper, blaze powder, demon core (tier 1), string</td>
+<td>Companion charm</td>
+</tr>
+<tr class="even">
+<td>Wind Charm</td>
+<td><code>xiaoxiang_sects:beast_wind_charm</code></td>
+<td>Shapeless: talisman paper, feather, demon core (tier 1), string</td>
+<td>Companion charm</td>
+</tr>
+<tr class="odd">
+<td>Jade Vitality Charm</td>
+<td><code>xiaoxiang_sects:beast_jade_charm</code></td>
+<td>Shapeless: talisman paper, glistering melon slice, demon core (tier 2), string</td>
+<td>Companion charm</td>
+</tr>
+<tr class="even">
+<td>Formation-Breaking Talisman</td>
+<td><code>xiaoxiang_sects:siege_breaker</code></td>
+<td>Shaped: gold nugget, paper, gold nugget / paper, amethyst shard, paper / gold nugget, paper, gold nugget (makes 2)</td>
+<td>Seizes a formation node in a siege</td>
+</tr>
+<tr class="odd">
+<td>Qi Battering Ram</td>
+<td><code>xiaoxiang_sects:siege_ram</code></td>
+<td>Shaped: iron block / log / log</td>
+<td>Shockwave on enemies within 8 blocks</td>
+</tr>
+<tr class="even">
+<td>Flame Arrow Volley</td>
+<td><code>xiaoxiang_sects:siege_volley</code></td>
+<td>Shaped: 8 arrows around a fire charge</td>
+<td>Fire on enemies within 14 blocks</td>
+</tr>
+<tr class="odd">
+<td>Broken Artifact</td>
+<td><code>xiaoxiang_sects:broken_artifact</code></td>
+<td>Dropped by spectres on ancient battlefields</td>
+<td>Repair at a Refining Core</td>
+</tr>
+</tbody>
+</table></div>
+<p>All items appear in the main mod’s creative tab. Useful commands:</p>
+<ul>
+<li><code>/give @s xiaoxiang_sects:beast_almanac</code></li>
+<li><code>/give @s xiaoxiang_sects:sect_command_token</code></li>
+<li><code>/give @s xiaoxiang_sects:gate_key</code></li>
+</ul>
+</section>
+  <a class="top" href="#overview">Back to the start</a>
+</main>
+</div>
+<script>
+(function(){
+  var side=document.getElementById('side'),menu=document.getElementById('menu');
+  menu.addEventListener('click',function(){var c=side.classList.toggle('closed');menu.setAttribute('aria-expanded',String(!c));menu.textContent=c?'Show chapters':'Hide chapters';});
+  var links=[].slice.call(document.querySelectorAll('#nav a')),secs=[].slice.call(document.querySelectorAll('.ch'));
+  links.forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=860){side.classList.add('closed');menu.textContent='Show chapters';menu.setAttribute('aria-expanded','false');}});});
+  var q=document.getElementById('q'),none=document.getElementById('none');
+  var text={};secs.forEach(function(s){text[s.id]=s.textContent.toLowerCase();});
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(),shown=0;
+    secs.forEach(function(s){var ok=!v||text[s.id].indexOf(v)>=0;s.hidden=!ok;if(ok)shown++;});
+    links.forEach(function(a){a.parentNode.hidden=!(!v||text[a.dataset.t].indexOf(v)>=0);});
+    document.querySelectorAll('.ng').forEach(function(g){g.hidden=!g.querySelector('li:not([hidden])');});
+    document.querySelectorAll('[data-part]').forEach(function(p){p.hidden=!!v;});
+    none.hidden=shown>0;
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.dataset.t===e.target.id);});}});},{rootMargin:'-10% 0px -80% 0px'});
+    secs.forEach(function(s){io.observe(s);});
+  }
+})();
+</script>
+
+</body></html>
